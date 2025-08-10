@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<!-- About -->
+<div class="section mt-0">
+    <h1 class="title title--h1 title__separate">Uber mich</h1>
+    <div class="pt-2 pt-sm-3">
+        <p>Ich bin entwickler die gerade in WWM GmbH als Azubi gerarbeitet</p>
+        <p class="mb-0">Ich entwickle nicht nur .Net sondern auch Versuche ich mit Php und LAravel auch arbeiten,WWM Groupe Begeistere mich zu Perfekt sein.</p>
+    </div>
+</div>
+@* 
+@if (Model.ThingIDoList != null && Model.ThingIDoList.Any())
+{
+    <partial name="_ThingIDoPartial" model="@Model.ThingIDoList" />
+} *@
+
+
+@* @if (Model.CustomerFeedbakcList != null && Model.CustomerFeedbakcList.Any())
+{
+    <partial name="_CustomerFeedbackPartial" model="@Model.CustomerFeedbakcList" />
+}
+ 
+
+@if (Model.CustomerLogoList != null && Model.CustomerLogoList.Any())
+{
+    <partial name="_CustomerLogoPartial" model="@Model.CustomerLogoList" />
+}
+*@
+<!-- Clients -->
+<div class="section">
+    <h2 class="title title--h2">Kunde</h2>
+    <div class="swiper-container js-carousel-clients">
+        <div class="swiper-wrapper">
+            <!-- Item client -->
+            <div class="swiper-slide">
+                <a href="#"><img src="/site/img/download.jpg" alt="Logo"></a>
+            </div>
+
+            <!-- Item client -->
+            <div class="swiper-slide">
+                <a href="#"><img src="/site/img/download.jpg" alt="Logo"></a>
+            </div>
+
+            <!-- Item client -->
+            <div class="swiper-slide">
+                <a href="#"><img src="/site/img/download.jpg" alt="Logo"></a>
+            </div>
+
+            <!-- Item client -->
+            <div class="swiper-slide">
+                <a href="#"><img src="/site/img/download.jpg" alt="Logp"></a>
+            </div>
+
+
+            <div class="swiper-slide">
+                <a href="#"><img src="/site/img/download.jpg" alt="Logo"></a>
+            </div>
+
+            <!-- Item client -->
+            <div class="swiper-slide">
+                <a href="#"><img src="/site/img/download.jpg" alt="Logo"></a>
+            </div>
+
+        </div>
+
+        <div class="swiper-pagination"></div>
+    </div>
+</div>

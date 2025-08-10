@@ -1,0 +1,17 @@
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\bin\Debug\net6.0\Lebenslauf.Application.deps.json
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\bin\Debug\net6.0\Lebenslauf.Application.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\bin\Debug\net6.0\Lebenslauf.Application.pdb
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\bin\Debug\net6.0\Lebenslauf.Domain.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\bin\Debug\net6.0\Lebenslauf.Infra.Data.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\bin\Debug\net6.0\Lebenslauf.Domain.pdb
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\bin\Debug\net6.0\Lebenslauf.Infra.Data.pdb
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.csproj.AssemblyReference.cache
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.AssemblyInfoInputs.cache
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.AssemblyInfo.cs
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.csproj.CoreCompileInputs.cache
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.csproj.CopyComplete
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\refint\Lebenslauf.Application.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.pdb
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\ref\Lebenslauf.Application.dll

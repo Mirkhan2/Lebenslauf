@@ -1,0 +1,28 @@
+﻿@model Lebenslauf.Domain.ViewModels.Page.LebenslaufPageViewModel
+
+@{
+    ViewData["Title"] = "Lebenslauf";
+}
+
+<div class="section mt-0">
+    <h1 class="title title--h1 title__separate">Lebenslauf</h1>
+</div>
+
+
+@if (Model.Educations != null && Model.Educations.Any())
+{
+    <partial name="_EducationPartial" model="@Model.Educations" />
+}
+
+
+@if (Model.Erfahrungs != null && Model.Erfahrungs.Any())
+{
+    <partial name="_ErfahrungPartial" model="@Model.Erfahrungs" />
+}
+
+
+
+@if (Model.Fahigkeits != null && Model.Fahigkeits.Any())
+{
+    <partial name="_FahigkeitPartial" model="@Model.Fahigkeits" />
+}

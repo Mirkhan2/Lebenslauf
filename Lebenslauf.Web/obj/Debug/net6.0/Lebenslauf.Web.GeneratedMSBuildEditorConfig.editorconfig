@@ -1,0 +1,93 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Lebenslauf.Web
+build_property.RootNamespace = Lebenslauf.Web
+build_property.ProjectDir = C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Home/_CustomerFeedBackPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ3VzdG9tZXJGZWVkQmFja1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Home/_CustomerLogoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfQ3VzdG9tZXJMb2dvUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Home/_ThingIDoPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxfVGhpbmdJRG9QYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Lebenslauf/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGViZW5zbGF1ZlxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Lebenslauf/_EducationsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGViZW5zbGF1ZlxfRWR1Y2F0aW9uc1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Lebenslauf/_ErfahrungPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGViZW5zbGF1ZlxfRXJmYWhydW5nUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Lebenslauf/_FahigkeitPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTGViZW5zbGF1ZlxfRmFoaWdrZWl0UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Portfolio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUG9ydGZvbGlvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Shared/Components/SideBar/Sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcU2lkZUJhclxTaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Shared/_FooterRefrencesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Gb290ZXJSZWZyZW5jZXNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Shared/_HeaderRefrencesPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9IZWFkZXJSZWZyZW5jZXNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Shared/_MenuPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW51UGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Shared/_PreLoaderPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QcmVMb2FkZXJQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Shared/_SidebarPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9TaWRlYmFyUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-b7xw0kqaqq
