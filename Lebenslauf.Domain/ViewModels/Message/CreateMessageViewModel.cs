@@ -4,10 +4,11 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lebenslauf.Domain.ViewModels.Common;
 
 namespace Lebenslauf.Domain.ViewModels.Message
 {
-    public class CreateMessageViewModel
+    public class CreateMessageViewModel : GoogleRecaptchaViewModel
     {
         public long Id { get; set; }
 

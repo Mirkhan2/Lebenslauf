@@ -1,4 +1,5 @@
-﻿using Lebenslauf.Application.Services.Interfaces;
+﻿using GoogleReCaptcha.V3.Interface;
+using Lebenslauf.Application.Services.Interfaces;
 using Lebenslauf.Domain.ViewModels.Message;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +11,11 @@ namespace Lebenslauf.Web.Controllers
 
         #region Constructor
         private readonly IMessageService _messageService;
-        public ContactController(IMessageService messageService)
+        private readonly ICaptchaValidator _captchaValidator;
+        public ContactController(IMessageService messageService , ICaptchaValidator captchaValidator)
         {
             _messageService = messageService;
+            _captchaValidator = captchaValidator;
         }
         #endregion
 
@@ -26,6 +29,10 @@ namespace Lebenslauf.Web.Controllers
         [HttpPost, ValidateAntiForgeryToken]
         public async Task<IActionResult> Index(CreateMessageViewModel message)
         {
+            if (!await _captchaValidator.IsCaptchaPassedAsync(message.Captcha))
+            {
+                return View(message);
+            }
             if (!ModelState.IsValid)
             {
                 return View(message);

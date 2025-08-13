@@ -1,3 +1,5 @@
+using GoogleReCaptcha.V3;
+using GoogleReCaptcha.V3.Interface;
 using Lebenslauf.Infra.Data.Context;
 using Lebenslauf.Infra.IoC;
 using Microsoft.EntityFrameworkCore;
@@ -12,17 +14,21 @@ var configuration = builder.Configuration;
 // ---------------------- Services registrieren ----------------------
 builder.Services.AddControllersWithViews();
 
-// DbContext
+#region dbCOntext
 builder.Services.AddDbContext<AppDbContext>(options =>
 {
     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
 });
+#endregion
 
-//// Eigene Services
+
+
 RegisterServices(builder.Services);
+#region Google Recaptcha
 
-//// Google Recaptcha
-//builder.Services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
+builder.Services.AddHttpClient<ICaptchaValidator, GoogleReCaptchaValidator>();
+
+#endregion
 
 // Encoder
 builder.Services.AddSingleton<HtmlEncoder>(
