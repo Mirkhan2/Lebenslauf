@@ -27,6 +27,8 @@ namespace Lebenslauf.Infra.Data.Context
         public DbSet<PortfolioCategory> PortfolioCategories { get; set; }
         public DbSet<SocialMedia> SocialMedias { get; set; }
         public DbSet<Information> Informations { get; set; }
+        public DbSet<Message> Messages { get; set; }
+
 
 
         #endregion

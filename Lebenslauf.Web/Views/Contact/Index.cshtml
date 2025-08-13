@@ -1,0 +1,47 @@
+﻿@model Lebenslauf.Domain.ViewModels.Message.CreateMessageViewModel
+
+@section Script{
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}
+
+<div class="section mt-0">
+    <h1 class="title title--h1 title__separate">Mich zu Kontaktireren</h1>
+</div>
+<div class="map section">
+    <iframe src="" height="450" style="border:0;" allowfullscreen="https://www.google.com/maps/place/Aachen/@50.7594249,5.9317204,11z/data=!3m1!4b1!4m6!3m5!1s0x47c0997cb08a191d:0x63a30eae0b0e444f!8m2!3d50.7753455!4d6.0838868!16zL20vMHFqZA?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D"></iframe>
+</div>
+<h2 class="title title--h2"> Kontakt FOrmular</h2>
+
+<form class="contact-form" asp-controller="Contact" asp-action="Index" method="post">
+
+    <div class="row">
+
+        <div class="form-group col-12 col-md-6">
+            <i class="font-icon icon-user"></i>
+            <input asp-for="Name" class="input input__icon form-control" placeholder="\ و Vorname & Nachname \">
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+
+        <div class="form-group col-12 col-md-6">
+            <i class="font-icon icon-at"></i>
+            <input asp-for="Email" class="input input__icon form-control" placeholder=" Email Addresse" />
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+
+        <div class="form-group col-12 col-md-12">
+            <textarea asp-for="Text" class="textarea form-control" placeholder=" Eure Nachricht" rows="4"></textarea>
+            <span class="text-danger" asp-validation-for="Text"></span>
+        </div>
+
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-12 col-md-12 order-1 order-md-2 text-left">
+            <button type="submit" class="btn"><i class="font-icon icon-send"></i> nachricht Senden</button>
+        </div>
+    </div>
+
+    <div class="row mb-5"></div>
+
+</form>

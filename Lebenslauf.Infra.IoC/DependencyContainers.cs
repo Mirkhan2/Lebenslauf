@@ -21,6 +21,8 @@ namespace Lebenslauf.Infra.IoC
             service.AddScoped<IPortfolioService, PortfolioService>();
             service.AddScoped<ISocialMediaService, SocialMediaService>();
             service.AddScoped<IInformationService, InformationService>();
+            service.AddScoped<IMessageService , MessageService>();
+
 
 
 

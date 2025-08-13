@@ -7,16 +7,15 @@
 
 <body class="bg-triangles-2">
 
-    <partial name="_PreloaderPartial" />
+    <partial name="_PreLoaderPartial" />
 
     <main class="main">
 
         <partial name="_MenuPartial" />
 
         <div class="wrapper">
-            @await Component.InvokeAsync("SideBar")
 
-            <partial name="_SidebarPartial" />
+            @await Component.InvokeAsync("SideBar")
 
             <div class="content js-scroll">
                 @RenderBody()
@@ -27,6 +26,8 @@
     </main>
 
     <partial name="_FooterRefrencesPartial" />
+
+    @RenderSection("Script", false)
 
 </body>
 
