@@ -21,6 +21,7 @@ namespace Lebenslauf.Application.Services.Implementions
 
 
         #endregion
+
         public  async Task<bool> CreateMessage(CreateMessageViewModel message)
         {
             Message newMessage = new Message()
