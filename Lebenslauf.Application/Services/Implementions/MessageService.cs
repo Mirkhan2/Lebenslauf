@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Lebenslauf.Application.Security;
 using Lebenslauf.Application.Services.Interfaces;
 using Lebenslauf.Domain.Models;
 using Lebenslauf.Domain.ViewModels.Message;
@@ -27,10 +28,10 @@ namespace Lebenslauf.Application.Services.Implementions
         {
             Message newMessage = new Message()
             {
-                Email = message.Email,
+                Email = message.Email.SanitizeText(),
                 //    Id = message.Id,
-                Name = message.Name,
-                Text = message.Text,
+                Name = message.Name.SanitizeText(),
+                Text = message.Text.SanitizeText(),
             };
             await _context.AddAsync(newMessage);
             await _context.SaveChangesAsync();

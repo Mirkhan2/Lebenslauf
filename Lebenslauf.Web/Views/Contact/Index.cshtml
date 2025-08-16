@@ -1,11 +1,46 @@
 ﻿@model Lebenslauf.Domain.ViewModels.Message.CreateMessageViewModel
 
+@using Lebenslauf.Domain.ViewModels.Information
+
+@{
+    bool? formSubmitResult = ViewData["FormSubmitResult"] as bool?;
+    var information = ViewData["Information"] as InformationViewModel;
+}
+
 @section Script{
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <partial name="_CaptchaScriptPartial" />
 }
 
+@if (formSubmitResult != null && formSubmitResult == true)
+{
+    <script>
+        Swal.fire({
+            title: 'Erfolgreich',
+            text: 'erfolgreich gesendet.',
+            icon: 'success',
+            confirmButtonText: 'Ok'
+        });
+
+        document.getElementById("Name").value = "";
+        document.getElementById("Email").value = "";
+        document.getElementById("Text").value = "";
+    </script>
+}
+else if (formSubmitResult != null && formSubmitResult == false)
+{
+    <script>
+        Swal.fire({
+            title: 'erfolglos',
+            text: 'recaptcha Nicht bestätigt, versuchen Sie es erneut..',
+            icon: 'warning',
+            confirmButtonText: 'Okey'
+        });
+    </script>
+}
+
+}
 <div class="section mt-0">
     <h1 class="title title--h1 title__separate">Mich zu Kontaktireren</h1>
 </div>

@@ -252,3 +252,7 @@ C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\bin\Debug\net6.0\zh-Hans\M
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\bin\Debug\net6.0\GoogleReCaptcha.V3.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\bin\Debug\net6.0\AngleSharp.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\bin\Debug\net6.0\AngleSharp.Css.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\bin\Debug\net6.0\HtmlSanitizer.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web\bin\Debug\net6.0\System.Collections.Immutable.dll

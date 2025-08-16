@@ -31,6 +31,7 @@ namespace Lebenslauf.Web.Controllers
         {
             if (!await _captchaValidator.IsCaptchaPassedAsync(message.Captcha))
             {
+                ViewData["FormSubmitResult"] = false;
                 return View(message);
             }
             if (!ModelState.IsValid)
@@ -39,6 +40,11 @@ namespace Lebenslauf.Web.Controllers
             }
 
             var result = await _messageService.CreateMessage(message);
+
+            if (result)
+            {
+                ViewData["FormSubmitResult"] = true;
+            }
 
             return RedirectToAction("Index");
         }
