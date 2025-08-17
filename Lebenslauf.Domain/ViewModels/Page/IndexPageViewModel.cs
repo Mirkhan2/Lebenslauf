@@ -11,7 +11,7 @@ namespace Lebenslauf.Domain.ViewModels.Page
 {
     public class IndexPageViewModel
     {
-        public List<ThingsIDoListViewModel> ThingsIDoList { get; set; }
+        public List<ThingIDoListViewModel> ThingIDoList { get; set; }
         public List<CustomerFeedBackViewModel> CustomerFeedBackList { get; set; }
         public List<CustomerLogoListViewModel> CustomerLogoList { get; set; }
 

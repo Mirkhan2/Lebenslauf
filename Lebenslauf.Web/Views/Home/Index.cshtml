@@ -1,4 +1,5 @@
-﻿@{
+﻿@model Lebenslauf.Domain.ViewModels.Page.IndexPageViewModel
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -12,14 +13,14 @@
         <p class="mb-0">Ich entwickle nicht nur .Net sondern auch Versuche ich mit Php und LAravel auch arbeiten,WWM Groupe Begeistere mich zu Perfekt sein.</p>
     </div>
 </div>
-@* 
-@if (Model.ThingIDoList != null && Model.ThingIDoList.Any())
+ 
+@* @if (Model.ThingIDoList != null &&  Model.th.Any())
 {
     <partial name="_ThingIDoPartial" model="@Model.ThingIDoList" />
-} *@
+} 
 
 
-@* @if (Model.CustomerFeedbakcList != null && Model.CustomerFeedbakcList.Any())
+ @if (Model.CustomerFeedbackList != null && Model.CustomerFeedbackList.Any())
 {
     <partial name="_CustomerFeedbackPartial" model="@Model.CustomerFeedbakcList" />
 }
@@ -29,7 +30,7 @@
 {
     <partial name="_CustomerLogoPartial" model="@Model.CustomerLogoList" />
 }
-*@
+ *@
 <!-- Clients -->
 <div class="section">
     <h2 class="title title--h2">Kunde</h2>
@@ -52,7 +53,7 @@
 
             <!-- Item client -->
             <div class="swiper-slide">
-                <a href="#"><img src="/site/img/download.jpg" alt="Logp"></a>
+                <a href="#"><img src="/site/img/download.jpg" alt="Logo"></a>
             </div>
 
 

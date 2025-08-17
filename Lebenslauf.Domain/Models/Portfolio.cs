@@ -37,8 +37,6 @@ namespace Lebenslauf.Domain.Models
 
         [Display(Name = "Prioritat")]
         public int Order { get; set; } = 0;
-
-
         public long PortfolioCategoryId { get; set; }
         public PortfolioCategory PortfolioCategory { get; set; }
 

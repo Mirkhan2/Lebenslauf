@@ -9,7 +9,7 @@ namespace Lebenslauf.Application.Services.Interfaces
 {
     public interface IThingIDoService
     {
-        Task<List<ThingsIDoListViewModel>> GetAllThingIDoForIndex();
+        Task<List<ThingIDoListViewModel>> GetAllThingIDoForIndex();
 
     }
 }

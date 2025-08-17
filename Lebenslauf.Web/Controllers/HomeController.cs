@@ -22,19 +22,17 @@ namespace Lebenslauf.Web.Controllers
             _customerLogoService = customerLogoService;
         }
         #endregion
+
         public async Task<IActionResult> Index()
         {
-
             IndexPageViewModel model = new IndexPageViewModel()
             {
-                ThingsIDoList = await _thingIDoService.GetAllThingIDoForIndex(),
+                ThingIDoList = await _thingIDoService.GetAllThingIDoForIndex(),
                 CustomerFeedBackList = await _customerFeedbackService.GetCustomerFeedBackForIndex(),
                 CustomerLogoList = await _customerLogoService.GetCustomerLogoForIndexPage()
             };
-
             return View(model);
-
         }
-
+       
     }
 }

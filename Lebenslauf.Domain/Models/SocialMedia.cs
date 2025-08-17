@@ -22,7 +22,7 @@ namespace Lebenslauf.Domain.Models
         [Display(Name = "ICon")]
         [Required(ErrorMessage = "Bitte geben Sie {0} ein")]
         [MinLength(4, ErrorMessage = "{0}Es kann nicht weniger als {1} Zeichen sein. ")]
-        [MaxLength(4, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
+      
         public string Icon { get; set; }
 
 

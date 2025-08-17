@@ -1,5 +1,5 @@
 ﻿@model Lebenslauf.Domain.ViewModels.Message.CreateMessageViewModel
-
+//TODO MapSRC
 @using Lebenslauf.Domain.ViewModels.Information
 
 @{
@@ -41,12 +41,15 @@ else if (formSubmitResult != null && formSubmitResult == false)
 }
 
 }
-<div class="section mt-0">
-    <h1 class="title title--h1 title__separate">Mich zu Kontaktireren</h1>
-</div>
-<div class="map section">
-    <iframe src="" height="450" style="border:0;" allowfullscreen="https://www.google.com/maps/place/Aachen/@@50.7594249,5.9317204,11z/data=!3m1!4b1!4m6!3m5!1s0x47c0997cb08a191d:0x63a30eae0b0e444f!8m2!3d50.7753455!4d6.0838868!16zL20vMHFqZA?entry=ttu&g_ep=EgoyMDI1MDgwNi4wIKXMDSoASAFQAw%3D%3D"></iframe>
-</div>
+@* @if (!string.IsNullOrEmpty(information.MapSrc))
+{
+    <div class="section mt-0">
+        <h1 class="title title--h1 title__separate">تماس با من</h1>
+    </div>
+    <div class="map section">
+        <iframe src="@information.MapSrc" height="450" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+} *@
 <h2 class="title title--h2"> Kontakt FOrmular</h2>
 
 <form class="contact-form" asp-controller="Contact" asp-action="Index" method="post">

@@ -14,25 +14,37 @@ namespace Lebenslauf.Domain.Models
         public long Id { get; set; }
 
 
-        [Required(ErrorMessage = "Bitte  Fuhelen sie aus")]
-        [MaxLength(100)]
-        public string Icon { get; set; }
+        [Display(Name = "ICon")]
+        [Required(ErrorMessage = "Bitte geben Sie {0} ein")]
+        [MinLength(4, ErrorMessage = "{0}Es kann nicht weniger als {1} Zeichen sein. ")]
 
-        [Required(ErrorMessage = "Bitte  Fuhelen sie aus")]
-        [MaxLength(100)]
+        public string Icon { get; set; }
+       
+
+        [Display(Name = "THema")]
+        [Required(ErrorMessage = "Bitte geben Sie {0} ein")]
+        [MinLength(4, ErrorMessage = "{0}Es kann nicht weniger als {1} Zeichen sein. ")]
         public string Title { get; set; }
 
-        [Required(ErrorMessage = "Bitte  Fuhelen sie aus")]
-        [MaxLength(1000)]
-        public string Desc { get; set; }
 
-        [Required(ErrorMessage = "Bitte  Fuhelen sie aus")]
-        [Range(4, 12)]
+        [Display(Name = "Descrption")]
+        [Required(ErrorMessage = "Bitte geben Sie {0} ein")]
+        [MinLength(4, ErrorMessage = "{0}Es kann nicht weniger als {1} Zeichen sein. ")]
+        public string Description { get; set; }
+
+
+        [Display(Name = "THema")]
+
+        [Range(4, 12, ErrorMessage = "4 bis 12 Zeichen sein. ")]
         public int ColumnLg { get; set; } = 6;
-        public int Order { get; set; } 
+
+
+        [Display(Name = "Bestell Prioritat")]
+        public int Order { get; set; } = 0;
 
         #endregion
 
 
     }
 }
+

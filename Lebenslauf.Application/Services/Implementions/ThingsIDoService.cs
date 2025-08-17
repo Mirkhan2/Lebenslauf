@@ -23,15 +23,15 @@ namespace Lebenslauf.Application.Services.Implementions
         #endregion
 
 
-        public async Task<List<ThingsIDoListViewModel>> GetAllThingIDoForIndex()
+        public async Task<List<ThingIDoListViewModel>> GetAllThingIDoForIndex()
         {
-            List<ThingsIDoListViewModel> thingIDos = await _context.ThingsIDo
+            List<ThingIDoListViewModel> thingIDos = await _context.ThingsIDo
                 .OrderBy(t => t.Order)
-                .Select(t => new ThingsIDoListViewModel()
+                .Select(t => new ThingIDoListViewModel()
                 {
                     Id = t.Id,
                     ColumnLg = t.ColumnLg,
-                    Desc = t.Desc,
+                    Description = t.Description,
                     Order = t.Order,
                     Icon = t.Icon,
                     Title = t.Title
