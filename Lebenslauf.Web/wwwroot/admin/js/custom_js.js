@@ -1,7 +1,7 @@
 ﻿function StartLoading(element = 'body') {
     $(element).waitMe({
         effect: 'bounce',
-        text: 'لطفا صبر کنید ...',
+        text: 'Warten Sie Bitte ...',
         bg: 'rgba(255, 255, 255, 0.7)',
         color: '#000'
     });
@@ -43,25 +43,25 @@ function ThingIDoFormSubmited(res) {
     CloseLoading();
 
     if (res.status === 'Success') {
-        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success')
+        ShowMessage('Erfolgfreich einsatzد.', ' Erfolgreich Nachricht', 'success')
         $('#modal-left').modal('hide');
         $('#data-table-box').load(location.href + ' #data-table-box');
         $.getScript('/admin/js/data-table.js', function (data, textStatus, jqxhr) { });
     } else {
-        showMessage('عملیات با شکست مواجه شد', 'پیغام خطا', 'error')
+        showMessage('Error Einsatz', ' Error nachricht', 'error')
     }
 
 }
 
 function DeleteThingIDo(id) {
     swal.fire({
-        title: "اخطار",
-        text: "آیا از حذف این آیتم اطمینان دارید ؟",
+        title: "Warning",
+        text: "SInd sie sicher um loschen ؟",
         icon: "warning",
         dangerMode: true,
         showDenyButton: true,
-        confirmButtonText: 'حذف',
-        denyButtonText: 'خیر'
+        confirmButtonText: 'Loschen',
+        denyButtonText: 'Nein'
     }).then((willDelete) => {
         if (willDelete.isConfirmed) {
 
@@ -78,10 +78,10 @@ function DeleteThingIDo(id) {
                     CloseLoading();
 
                     if (res.status === "Success") {
-                        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success');
+                        ShowMessage('Einsatz Erfolgreich.', 'Erfolgreich', 'success');
                         $(`#ListItem-${id}`).remove();
                     } else {
-                        ShowMessage('عملیات با شکست مواجه شد.', 'پیغام خطا', 'error');
+                        ShowMessage('EInsatz nicht erfolgreich', ' Error', 'error');
                     }
 
                 },
@@ -127,25 +127,25 @@ function EducationFormSubmited(res) {
     CloseLoading();
 
     if (res.status === 'Success') {
-        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success')
+        ShowMessage('Der Vorgang war erfolgreich.', ' Erfolgreich', 'success')
         $('#modal-left').modal('hide');
         $('#data-table-box').load(location.href + ' #data-table-box');
         $.getScript('/admin/js/data-table.js', function (data, textStatus, jqxhr) { });
     } else {
-        showMessage('عملیات با شکست مواجه شد', 'پیغام خطا', 'error')
+        showMessage('Der Vorgang ist fehlgeschlagen.', ' Error', 'error')
     }
 
 }
 
 function DeleteEducation(id) {
     swal.fire({
-        title: "اخطار",
-        text: "آیا از حذف این آیتم اطمینان دارید ؟",
+        title: "Warnung",
+        text: "Möchten Sie diesen Artikel wirklich löschen?",
         icon: "warning",
         dangerMode: true,
         showDenyButton: true,
-        confirmButtonText: 'حذف',
-        denyButtonText: 'خیر'
+        confirmButtonText: 'Loschen',
+        denyButtonText: 'Nein'
     }).then((willDelete) => {
         if (willDelete.isConfirmed) {
 
@@ -162,10 +162,10 @@ function DeleteEducation(id) {
                     CloseLoading();
 
                     if (res.status === "Success") {
-                        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success');
+                        ShowMessage('Der Vorgang war erfolgreich.', 'Erfolgreich ', 'success');
                         $(`#ListItem-${id}`).remove();
                     } else {
-                        ShowMessage('عملیات با شکست مواجه شد.', 'پیغام خطا', 'error');
+                        ShowMessage('عDer Vorgang ist fehlgeschlagen', 'Error ', 'error');
                     }
 
                 },
@@ -210,25 +210,25 @@ function CustomerFeedbackFormSubmited(res) {
     CloseLoading();
 
     if (res.status === 'Success') {
-        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success')
+        ShowMessage('Der Vorgang ist fehlgeschlagen..', ' Erfolgreich', 'success')
         $('#modal-left').modal('hide');
         $('#data-table-box').load(location.href + ' #data-table-box');
         $.getScript('/admin/js/data-table.js', function (data, textStatus, jqxhr) { });
     } else {
-        showMessage('عملیات با شکست مواجه شد', 'پیغام خطا', 'error')
+        showMessage('Der Vorgang ist fehlgeschlagen', ' Eror ','error')
     }
 
 }
 
 function DeleteCustomerFeedback(id) {
     swal.fire({
-        title: "اخطار",
-        text: "آیا از حذف این آیتم اطمینان دارید ؟",
+        title: "Warning",
+        text: "Möchten Sie diesen Artikel wirklich löschen?؟",
         icon: "warning",
         dangerMode: true,
         showDenyButton: true,
-        confirmButtonText: 'حذف',
-        denyButtonText: 'خیر'
+        confirmButtonText: 'loschen',
+        denyButtonText: 'nein'
     }).then((willDelete) => {
         if (willDelete.isConfirmed) {
 
@@ -245,10 +245,10 @@ function DeleteCustomerFeedback(id) {
                     CloseLoading();
 
                     if (res.status === "Success") {
-                        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success');
+                        ShowMessage('Der Vorgang war erfolgreich..', 'Erfolgreich ', 'success');
                         $(`#ListItem-${id}`).remove();
                     } else {
-                        ShowMessage('عملیات با شکست مواجه شد.', 'پیغام خطا', 'error');
+                        ShowMessage('Der Vorgang ist fehlgeschlagen..', '= Error', 'error');
                     }
 
                 },
@@ -294,25 +294,25 @@ function SkillFormSubmited(res) {
     CloseLoading();
 
     if (res.status === 'Success') {
-        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success')
+        ShowMessage('عDer Vorgang war erfolgreich.', ' Erfolgreich', 'success')
         $('#modal-left').modal('hide');
         $('#data-table-box').load(location.href + ' #data-table-box');
         $.getScript('/admin/js/data-table.js', function (data, textStatus, jqxhr) { });
     } else {
-        showMessage('عملیات با شکست مواجه شد', 'پیغام خطا', 'error')
+        showMessage('Der Vorgang ist fehlgeschlagen.', ' Error', 'error')
     }
 
 }
 
 function DeleteSkill(id) {
     swal.fire({
-        title: "اخطار",
-        text: "آیا از حذف این آیتم اطمینان دارید ؟",
+        title: "Warnung",
+        text: "Möchten Sie diesen Artikel wirklich löschen?",
         icon: "warning",
         dangerMode: true,
         showDenyButton: true,
-        confirmButtonText: 'حذف',
-        denyButtonText: 'خیر'
+        confirmButtonText: 'Loschen',
+        denyButtonText: 'Nein'
     }).then((willDelete) => {
         if (willDelete.isConfirmed) {
 
@@ -329,10 +329,10 @@ function DeleteSkill(id) {
                     CloseLoading();
 
                     if (res.status === "Success") {
-                        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success');
+                        ShowMessage('Der Vorgang war erfolgreich.', ' Erfolgreich', 'success');
                         $(`#ListItem-${id}`).remove();
                     } else {
-                        ShowMessage('عملیات با شکست مواجه شد.', 'پیغام خطا', 'error');
+                        ShowMessage('Der Vorgang ist fehlgeschlagen..', ' Error', 'error');
                     }
 
                 },
@@ -379,25 +379,25 @@ function PortfolioCategoryFormSubmited(res) {
     CloseLoading();
 
     if (res.status === 'Success') {
-        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success')
+        ShowMessage('Der Vorgang war erfolgreich.', ' Erfolgreich', 'success')
         $('#modal-left').modal('hide');
         $('#data-table-box').load(location.href + ' #data-table-box');
         $.getScript('/admin/js/data-table.js', function (data, textStatus, jqxhr) { });
     } else {
-        showMessage('عملیات با شکست مواجه شد', 'پیغام خطا', 'error')
+        showMessage('Der Vorgang ist fehlgeschlagen.', ' Error', 'error')
     }
 
 }
 
 function DeletePortfolioCategory(id) {
     swal.fire({
-        title: "اخطار",
-        text: "آیا از حذف این آیتم اطمینان دارید ؟",
+        title: "Warnung",
+        text: "Möchten Sie diesen Artikel wirklich löschen?",
         icon: "warning",
         dangerMode: true,
         showDenyButton: true,
-        confirmButtonText: 'حذف',
-        denyButtonText: 'خیر'
+        confirmButtonText: 'loschen',
+        denyButtonText: 'Nein'
     }).then((willDelete) => {
         if (willDelete.isConfirmed) {
 
@@ -414,10 +414,10 @@ function DeletePortfolioCategory(id) {
                     CloseLoading();
 
                     if (res.status === "Success") {
-                        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success');
+                        ShowMessage('Der Vorgang war erfolgreich', 'Erfolgreich ', 'success');
                         $(`#ListItem-${id}`).remove();
                     } else {
-                        ShowMessage('عملیات با شکست مواجه شد.', 'پیغام خطا', 'error');
+                        ShowMessage('Der Vorgang ist fehlgeschlagen..', ' Error', 'error');
                     }
 
                 },
@@ -463,25 +463,25 @@ function PortfolioFormSubmited(res) {
     CloseLoading();
 
     if (res.status === 'Success') {
-        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success')
+        ShowMessage('Der Vorgang war erfolgreich.', 'Erfolreich ', 'success')
         $('#modal-left').modal('hide');
         $('#data-table-box').load(location.href + ' #data-table-box');
         $.getScript('/admin/js/data-table.js', function (data, textStatus, jqxhr) { });
     } else {
-        showMessage('عملیات با شکست مواجه شد', 'پیغام خطا', 'error')
+        showMessage('Der Vorgang ist fehlgeschlagen.', 'Error ', 'error')
     }
 
 }
 
 function DeletePortfolio(id) {
     swal.fire({
-        title: "اخطار",
-        text: "آیا از حذف این آیتم اطمینان دارید ؟",
+        title: "Warnung",
+        text: "Möchten Sie diesen Artikel wirklich löschen?",
         icon: "warning",
         dangerMode: true,
         showDenyButton: true,
-        confirmButtonText: 'حذف',
-        denyButtonText: 'خیر'
+        confirmButtonText: 'loschen',
+        denyButtonText: 'Nein'
     }).then((willDelete) => {
         if (willDelete.isConfirmed) {
 
@@ -498,10 +498,10 @@ function DeletePortfolio(id) {
                     CloseLoading();
 
                     if (res.status === "Success") {
-                        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success');
+                        ShowMessage('Der Vorgang war erfolgreich.', 'Erfolgreich ', 'success');
                         $(`#ListItem-${id}`).remove();
                     } else {
-                        ShowMessage('عملیات با شکست مواجه شد.', 'پیغام خطا', 'error');
+                        ShowMessage('Der Vorgang ist fehlgeschlagen..', ' error', 'error');
                     }
 
                 },
@@ -546,12 +546,12 @@ function InformationFormSubmited(res) {
     CloseLoading();
 
     if (res.status === 'Success') {
-        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success')
+        ShowMessage('Der Vorgang war erfolgreich    .', 'erfolgreich ', 'success')
         $('#modal-left').modal('hide');
         $('#data-table-box').load(location.href + ' #data-table-box');
         $.getScript('/admin/js/data-table.js', function (data, textStatus, jqxhr) { });
     } else {
-        showMessage('عملیات با شکست مواجه شد', 'پیغام خطا', 'error')
+        showMessage('Der Vorgang ist fehlgeschlagen.', ' error', 'error')
     }
 
 }
@@ -559,13 +559,13 @@ function InformationFormSubmited(res) {
 
 function DeleteMessage(id) {
     swal.fire({
-        title: "اخطار",
-        text: "آیا از حذف این آیتم اطمینان دارید ؟",
+        title: "Warnung",
+        text: "Möchten Sie diesen Artikel wirklich löschen?",
         icon: "warning",
         dangerMode: true,
         showDenyButton: true,
-        confirmButtonText: 'حذف',
-        denyButtonText: 'خیر'
+        confirmButtonText: 'Loschen',
+        denyButtonText: 'Nein'
     }).then((willDelete) => {
         if (willDelete.isConfirmed) {
 
@@ -582,10 +582,10 @@ function DeleteMessage(id) {
                     CloseLoading();
 
                     if (res.status === "Success") {
-                        ShowMessage('عملیات با موفقیت انجام شد.', 'پیغام موفقیت', 'success');
+                        ShowMessage('Der Vorgang war erfolgreich.', ' Erfolgreich', 'success');
                         $(`#ListItem-${id}`).remove();
                     } else {
-                        ShowMessage('عملیات با شکست مواجه شد.', 'پیغام خطا', 'error');
+                        ShowMessage('Der Vorgang ist fehlgeschlagen.', ' Error', 'error');
                     }
 
                 },
