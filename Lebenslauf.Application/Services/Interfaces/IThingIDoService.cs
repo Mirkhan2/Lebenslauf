@@ -13,9 +13,6 @@ namespace Lebenslauf.Application.Services.Interfaces
         Task<ThingIDo> GetThingIDoById(long id);
         Task<List<ThingIDoListViewModel>> GetAllThingIDoForIndex();
         Task<bool> CreateOrEditThingIDo(CreateOrEditThingIDoViewModel thingIDo);
-
         Task<CreateOrEditThingIDoViewModel> FillCreateOrEditThingIDoViewModel(long id);
-
-
     }
 }

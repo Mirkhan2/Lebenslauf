@@ -1,4 +1,236 @@
-﻿function StartLoading(element = 'body') {
+﻿$(document).ready(function () {
+    $('.data-table').DataTable({
+        language: {
+            "emptyTable": "Esgibt keine Daten",
+            "info": "Schauen _START_ Bis _END_ Von _TOTAL_ Column",
+            "infoEmpty": "Zeige 0 bis 0 von 0 Zeilen",
+            "infoFiltered": "(Filter   _MAX_ Column)",
+            "infoThousands": ",",
+            "lengthMenu": "Schauen _MENU_ ",
+            "processing": ".Verarbeitung..",
+            "search": "Suchen:",
+            "zeroRecords": "Mit diesen Angaben wurde kein Datensatz gefunden.",
+            "paginate": {
+                "next": "Bevor",
+                "previous": "Nachste",
+                "first": "Erste",
+                "last": "Letze"
+            },
+            "aria": {
+                "sortAscending": ":Aufsteigende Anzeige aktivieren ",
+                "sortDescending": ": Absteigende Anzeige aktivieren"
+            },
+            "autoFill": {
+                "cancel": "Stornierung",
+                "fill": "Alle Zellen mit Systemstruktur füllen",
+                "fillHorizontal": "Zelle horizontal füllen",
+                "fillVertical": "Zelle vertikal füllen"
+            },
+            "buttons": {
+                "collection": "Sammlung",
+                "colvis": "Spaltenanzeigefähigkeit",
+                "colvisRestore": "Anzeigefähigkeit zurücksetzen",
+                "copy": "Kopie",
+                "copySuccess": {
+                    "1": "Eine Zeile wurde in den Speicher kopiert",
+                    "_": "%ds Zeilen in den Speicher kopiert"
+                },
+                "copyTitle": "In den Speicher kopieren",
+                "excel": "Excel",
+                "pageLength": {
+                    "-1": "Alle Zeilen anzeigen",
+                    "_": "Zeige % d Zeilen"
+                },
+                "print": "Ausdrucken",
+                "copyKeys": "Drücken Sie Strg oder ⌘ + C, um die Tabellendaten in den Systemspeicher zu kopieren.",
+                "csv": "Ordner CSV",
+                "pdf": "Ordner PDF",
+                "renameState": "Umbenennen",
+                "updateState": "Aktualisieren"
+            },
+            "searchBuilder": {
+                "add": "Bedingung hinzufügen",
+                "button": {
+                    "0": "Suchmaschine",
+                    "_": "Suchmaschine (%d)"
+                },
+                "clearAll": "Alles leeren",
+                "condition": "Zustand",
+                "conditions": {
+                    "date": {
+                        "after": "Nach",
+                        "before": "Nach",
+                        "between": "Zwischen",
+                        "empty": "frei",
+                        "equals": "Gleich",
+                        "not": "Nicht",
+                        "notBetween": "Nicht zwischen",
+                        "notEmpty": "Nicht leer"
+                    },
+                    "number": {
+                        "between": "Zwischen",
+                        "empty": "Leer",
+                        "equals": "Gleich",
+                        "gt": "Größer als",
+                        "gte": "Gleich oder größer als",
+                        "lt": "weniger als ",
+                        "lte": "Gleich oder kleiner als",
+                        "not": "Nicht zu sein",
+                        "notBetween": "Nicht zwischen",
+                        "notEmpty": "Nicht leer"
+                    },
+                    "string": {
+                        "contains": "Enthält",
+                        "empty": "frei",
+                        "endsWith": "Endet mit",
+                        "equals": "Gleich",
+                        "not": "Nicht",
+                        "notEmpty": "Nicht leer",
+                        "startsWith": "Beginnen mit",
+                        "notContains": "Enthält nicht",
+                        "notEnds": "Endet nicht mit",
+                        "notStarts": "Beginnen Sie nicht mit"
+                    },
+                    "array": {
+                        "equals": "Gleich",
+                        "empty": "Leer",
+                        "contains": "Enthält",
+                        "not": "Nicht",
+                        "notEmpty": "Nicht leer",
+                        "without": "Ohne"
+                    }
+                },
+                "data": "Information",
+                "logicAnd": "und",
+                "logicOr": "Oder",
+                "title": {
+                    "0": "Suchmaschine",
+                    "_": "Suchmaschine (%d)"
+                },
+                "value": "Menge",
+                "deleteTitle": "Filterbedingung löschen",
+                "leftTitle": "Äußerer Zustand",
+                "rightTitle": "Innerer Zustand"
+            },
+            "select": {
+                "cells": {
+                    "1": "1 Zelle ausgewählt",
+                    "_": "Zelle ausgewählt"
+                },
+                "columns": {
+                    "1": "Eine Spalte wurde ausgewählt",
+                    "_": "%d Spalte ausgewählt"
+                },
+                "rows": {
+                    "1": "1 Zeile ausgewählt",
+                    "_": "%d Ausgewalt"
+                }
+            },
+            "thousands": ",",
+            "searchPanes": {
+                "clearMessage": "Loschen alle",
+                "collapse": {
+                    "0": " Suche",
+                    "_": " suche (٪ d)"
+                },
+                "count": "{total}",
+                "countFiltered": "{shown} ({total})",
+                "emptyPanes": "Suchseite existiert nicht",
+                "loadMessage": "Suchseiten werden geladen...",
+                "title": "Aktive Filter – %d",
+                "showMessage": "Alle anzeigen"
+            },
+            "loadingRecords": "Laden...",
+            "datetime": {
+                "previous": "Bevor",
+                "next": "Nachste",
+                "hours": "Uhr",
+                "minutes": "Minuten",
+                "seconds": "Sekunde",
+                "amPm": [
+                    "Vormittag",
+                    "Abend"
+                ],
+                "months": {
+                    "0": "januar",
+                    "1": "Februar",
+                    "10": "November",
+                    "2": "Marz",
+                    "4": "Mai",
+                    "6": "Juli",
+                    "8": "September",
+                    "11": "December",
+                    "3": "April",
+                    "5": "juni",
+                    "7": "august",
+                    "9": "october"
+                },
+                "unknown": "-",
+                "weekdays": [
+                    "Sonntag",
+                    "Montag",
+                    "سه‌Dienstag",
+                    "Mittwoch",
+                    "Donnerstag",
+                    "Fraitag",
+                    "Samstag"
+                ]
+            },
+            "editor": {
+                "close": "schlissen",
+                "create": {
+                    "button": "Neue",
+                    "title": "Neue Registrierung",
+                    "submit": "Erstellen"
+                },
+                "edit": {
+                    "button": "Bearbeiten",
+                    "title": "Bearbeiten",
+                    "submit": "Aktuelisirung"
+                },
+                "remove": {
+                    "button": "Loschen",
+                    "title": "Loschen",
+                    "submit": "Loschen",
+                    "confirm": {
+                        "_": "Möchten Sie wirklich %d Zeilen löschen?",
+                        "1": "Möchten Sie wirklich eine Zeile löschen?"
+                    }
+                },
+                "multi": {
+                    "restore": "Zurück",
+                    "noMulti": "Dieser Eintrag kann einzeln bearbeitet werden, jedoch nicht als Teil einer Gruppe."
+                }
+            },
+            "decimal": ".",
+            "stateRestore": {
+                "creationModal": {
+                    "button": "Erstellen",
+                    "columns": {
+                        "search": "Spaltensuche",
+                        "visible": "Spaltenanzeigestatus"
+                    },
+                    "name": "Name:",
+                    "order": "Sortierung",
+                    "paging": "Pagination",
+                    "search": "Suchen",
+                    "select": "Auswahl",
+                    "title": "Eine neue Situation schaffen",
+                    "toggleLabel": "Umfasst:"
+                },
+                "emptyError": "Name darf nicht leer sein.",
+                "removeConfirm": "Möchten Sie %s wirklich löschen?",
+                "removeJoiner": "Loschenو",
+                "removeSubmit": "Loschen",
+                "renameButton": " Wechseln Name",
+                "renameLabel": "Neue Name Fur $s :"
+            }
+        },
+    });
+});
+
+
+function StartLoading(element = 'body') {
     $(element).waitMe({
         effect: 'bounce',
         text: 'Warten Sie Bitte ...',

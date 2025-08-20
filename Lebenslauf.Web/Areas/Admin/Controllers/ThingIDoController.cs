@@ -1,4 +1,5 @@
 ﻿using Lebenslauf.Application.Services.Interfaces;
+using Lebenslauf.Domain.ViewModels.ThingIDo;
 using Lebenslauf.Web.Areas.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
@@ -6,7 +7,7 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
 {
     public class ThingIDoController : AdminBaseController
     {
-        #region COnstructor
+        #region Constructor
         private readonly IThingIDoService _thingIDoService;
         public ThingIDoController(IThingIDoService thingIDoService)
         {
@@ -21,6 +22,19 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
         }
         #endregion
 
+        public async Task<IActionResult> LoadThingIDoFormModal(long id)
+        {
+            CreateOrEditThingIDoViewModel result = await _thingIDoService.FillCreateOrEditThingIDoViewModel(id);
+            return PartialView("_ThingIDoFormModalPartial", result);
+        }
+        public async Task<IActionResult> SubmitThingIDoFormModal(CreateOrEditThingIDoViewModel thingIDo)
+        {
+            var result = await _thingIDoService.CreateOrEditThingIDo(thingIDo);
 
+            if (result) return new JsonResult(new { status = "Success"});
+            
+            return new JsonResult(new {status  = "Error"});
+
+        }
     }
 }
