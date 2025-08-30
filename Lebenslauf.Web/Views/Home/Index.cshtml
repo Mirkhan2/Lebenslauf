@@ -14,15 +14,15 @@
     </div>
 </div>
  
-@* @if (Model.ThingIDoList != null &&  Model.th.Any())
+@if (Model.ThingIDoList != null &&  Model.ThingIDoList.Any())
 {
     <partial name="_ThingIDoPartial" model="@Model.ThingIDoList" />
 } 
 
 
- @if (Model.CustomerFeedbackList != null && Model.CustomerFeedbackList.Any())
+ @if (Model.CustomerFeedBackList != null && Model.CustomerFeedBackList.Any())
 {
-    <partial name="_CustomerFeedbackPartial" model="@Model.CustomerFeedbakcList" />
+    <partial name="_CustomerFeedbackPartial" model="@Model.CustomerFeedBackList" />
 }
  
 
@@ -30,7 +30,7 @@
 {
     <partial name="_CustomerLogoPartial" model="@Model.CustomerLogoList" />
 }
- *@
+
 <!-- Clients -->
 <div class="section">
     <h2 class="title title--h2">Kunde</h2>

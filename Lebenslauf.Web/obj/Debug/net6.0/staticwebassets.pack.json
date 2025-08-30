@@ -1065,10 +1065,6 @@
       "PackagePath": "staticwebassets\\admin\\js\\custom_js.js"
     },
     {
-      "Id": "C:\\Users\\mirkh\\source\\repos\\Lebenslauf\\Lebenslauf.Web\\wwwroot\\admin\\js\\data-table.js",
-      "PackagePath": "staticwebassets\\admin\\js\\data-table.js"
-    },
-    {
       "Id": "C:\\Users\\mirkh\\source\\repos\\Lebenslauf\\Lebenslauf.Web\\wwwroot\\admin\\js\\demo.js",
       "PackagePath": "staticwebassets\\admin\\js\\demo.js"
     },

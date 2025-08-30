@@ -16,6 +16,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Web
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Education/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRWR1Y2F0aW9uXGluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Education/_EducationFormModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRWR1Y2F0aW9uXF9FZHVjYXRpb25Gb3JtTW9kYWxQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -42,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Shared/_MessagePartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9NZXNzYWdlUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Shared/_ModalsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9Nb2RhbHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Shared/_ViewStart.cshtml]
