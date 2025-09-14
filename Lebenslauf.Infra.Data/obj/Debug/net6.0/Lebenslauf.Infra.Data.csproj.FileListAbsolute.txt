@@ -9,9 +9,10 @@ C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Le
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebenslauf.Infra.Data.AssemblyInfoInputs.cache
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebenslauf.Infra.Data.AssemblyInfo.cs
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebenslauf.Infra.Data.csproj.CoreCompileInputs.cache
-C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebenslauf.Infra.Data.csproj.CopyComplete
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebenslauf.Infra.Data.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\refint\Lebenslauf.Infra.Data.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebenslauf.Infra.Data.pdb
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebenslauf.Infra.Data.genruntimeconfig.cache
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\ref\Lebenslauf.Infra.Data.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebenslauf.Infra.Data.sourcelink.json
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.Data\obj\Debug\net6.0\Lebensla.A9A0BE5F.Up2Date

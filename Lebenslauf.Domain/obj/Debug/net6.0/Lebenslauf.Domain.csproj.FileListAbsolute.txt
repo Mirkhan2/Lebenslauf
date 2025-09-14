@@ -9,3 +9,4 @@ C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Domain\obj\Debug\net6.0\Lebens
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Domain\obj\Debug\net6.0\refint\Lebenslauf.Domain.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Domain\obj\Debug\net6.0\Lebenslauf.Domain.pdb
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Domain\obj\Debug\net6.0\ref\Lebenslauf.Domain.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Domain\obj\Debug\net6.0\Lebenslauf.Domain.sourcelink.json

@@ -102,6 +102,17 @@ namespace Lebenslauf.Application.Services.Implementions
             };
         }
 
+        public async Task<bool> DeleteThingIDo(long id)
+        {
+            ThingIDo thingIDo = await GetThingIDoById(id);
+
+            if (thingIDo == null) return false;
+            
+            _context.ThingsIDo.Remove(thingIDo);
+            await _context.SaveChangesAsync();
+            return true;
+            
+        }
     }
 
 }

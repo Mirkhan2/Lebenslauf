@@ -12,8 +12,9 @@ C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Leb
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Lebenslauf.Infra.IoC.AssemblyInfoInputs.cache
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Lebenslauf.Infra.IoC.AssemblyInfo.cs
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Lebenslauf.Infra.IoC.csproj.CoreCompileInputs.cache
-C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Lebenslauf.Infra.IoC.csproj.CopyComplete
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Lebenslauf.Infra.IoC.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\refint\Lebenslauf.Infra.IoC.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Lebenslauf.Infra.IoC.pdb
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\ref\Lebenslauf.Infra.IoC.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Lebenslauf.Infra.IoC.sourcelink.json
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Infra.IoC\obj\Debug\net6.0\Lebensla.919E27BD.Up2Date

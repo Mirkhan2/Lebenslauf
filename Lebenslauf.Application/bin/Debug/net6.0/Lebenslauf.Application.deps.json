@@ -505,7 +505,10 @@
       },
       "Lebenslauf.Domain/1.0.0": {
         "runtime": {
-          "Lebenslauf.Domain.dll": {}
+          "Lebenslauf.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Lebenslauf.Infra.Data/1.0.0": {
@@ -516,7 +519,10 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.0"
         },
         "runtime": {
-          "Lebenslauf.Infra.Data.dll": {}
+          "Lebenslauf.Infra.Data.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

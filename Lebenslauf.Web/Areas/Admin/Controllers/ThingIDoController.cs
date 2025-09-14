@@ -36,5 +36,14 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
             return new JsonResult(new {status  = "Error"});
 
         }
+        public async Task<IActionResult> DeleteThingIDO(long id)
+        {
+            var result = await _thingIDoService.DeleteThingIDo(id);
+
+            if (result) return new JsonResult(new { status = "Success" });
+
+            return new JsonResult(new { status = "Error" });
+        }
+
     }
 }

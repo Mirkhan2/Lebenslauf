@@ -10,8 +10,9 @@ C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\L
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.AssemblyInfoInputs.cache
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.AssemblyInfo.cs
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.csproj.CoreCompileInputs.cache
-C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.csproj.CopyComplete
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\refint\Lebenslauf.Application.dll
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.pdb
 C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\ref\Lebenslauf.Application.dll
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebenslauf.Application.sourcelink.json
+C:\Users\mirkh\source\repos\Lebenslauf\Lebenslauf.Application\obj\Debug\net6.0\Lebensla.70250F31.Up2Date
