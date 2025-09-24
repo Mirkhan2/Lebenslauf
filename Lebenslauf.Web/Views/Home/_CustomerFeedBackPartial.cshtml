@@ -1,5 +1,5 @@
-﻿@model List<CustomerFeedBackViewModel>
-@using Lebenslauf.Domain.ViewModels.CustomerFeedBack;
+﻿@model List<CustomerFeedback>
+@using Lebenslauf.Domain.Models
 @using Lebenslauf.Application.StaticTools
 
 
@@ -10,12 +10,12 @@
         <div class="swiper-wrapper">
 
 
-            @foreach (CustomerFeedBackViewModel item in Model)
+            @foreach (CustomerFeedback item in Model)
             {
                 <div class="swiper-slide review-item">
                     <svg class="avatar avatar--80" viewBox="0 0 84 84">
                         <g class="avatar__hexagon">
-                            <image xlink:href="@(string.IsNullOrEmpty(item.Avatar) ? FilePath.DefaultAvatar : $"{FilePath.CustomerFeedBackAvatarServer}{item.Avatar}" )" height="100%" width="100%"></image>
+                            <image xlink:href="@(string.IsNullOrEmpty(item.Avatar) ? FilePath.DefaultAvatar : $"{FilePath.CustomerFeedbackAvatarServer}{item.Avatar}" )" height="100%" width="100%"></image>
                         </g>
                     </svg>
                     <h4 class="title title--h3">@item.Name</h4>

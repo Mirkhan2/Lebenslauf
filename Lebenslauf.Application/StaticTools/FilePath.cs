@@ -8,39 +8,43 @@ namespace Lebenslauf.Application.StaticTools
 {
     public class FilePath
     {
-        #region Base Iamge paths
-        public static readonly string BaseImagePaths = "/content/images";
-        public static readonly string BaseImagePathsServer = $"wwwroot{BaseImagePaths}";
+        #region Base Image Paths
+        public static readonly string BaseImagePath = "/content/images/";
+        public static readonly string BaseImagePathServer = $"wwwroot{BaseImagePath}";
+        #endregion
 
-        #endregion
         #region default
-        public static readonly string DefaultAvatar = $"{BaseImagePaths}/default/default-avatar.png";
+        public static readonly string DefaultAvatar = $"{BaseImagePath}/default/default-avatar.png";
         #endregion
-        #region Customer FeedBack Avatar
-        public static readonly string CustomerFeedBackAvatar = $"{BaseImagePaths}/default/default-avatar/origin/";
-        public static readonly string CustomerFeedBackAvatarServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePaths}/default/default-avatar/origin/");
+
+
+        #region Customer Feedback Avatar
+        public static readonly string CustomerFeedbackAvatar = $"{BaseImagePath}/customer-feedback-avatar/origin/";
+        public static readonly string CustomerFeedbackAvatarServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathServer}/customer-feedback-avatar/origin/");
         #endregion
+
 
         #region Customer Logo
-        public static readonly string CustomerLogo = $"{BaseImagePaths}/customer-logo/origin/";
-        public static readonly string CustomerLogoServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePaths}/customer-logo/origin/");
+        public static readonly string CustomerLogo = $"{BaseImagePath}/customer-logo/origin/";
+        public static readonly string CustomerLogoServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathServer}/customer-logo/origin/");
         #endregion
 
+
         #region Portfolio
-        public static readonly string Portfolio = $"{BaseImagePaths}/portfolio/origin/";
-        public static readonly string PortfolioServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathsServer}/portfolio/origin/");
+        public static readonly string Portfolio = $"{BaseImagePath}/portfolio/origin/";
+        public static readonly string PortfolioServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathServer}/portfolio/origin/");
         #endregion
 
 
         #region Avatar
-        public static readonly string Avatar = $"{BaseImagePaths}/avatar/origin/";
-        public static readonly string AvatarServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathsServer}/avatar/origin/");
+        public static readonly string Avatar = $"{BaseImagePath}/avatar/origin/";
+        public static readonly string AvatarServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathServer}/avatar/origin/");
         #endregion
 
 
         #region Resume
-        public static readonly string Resume = $"{BaseImagePaths}/resume/origin/";
-        public static readonly string ResumeServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathsServer}/resume/origin/");
+        public static readonly string Resume = $"{BaseImagePath}/resume/origin/";
+        public static readonly string ResumeServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathServer}/resume/origin/");
         #endregion
     }
 }

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lebenslauf.Domain.ViewModels.CustomerFeedBack
 {
-    public class CustomerFeedBackViewModel
+    public class CustomerFeedbackViewModel
     {
 
         public long Id { get; set; }
@@ -15,9 +15,11 @@ namespace Lebenslauf.Domain.ViewModels.CustomerFeedBack
 
         public string Avatar { get; set; }
         [Display(Name ="Name")]
+        [Required(ErrorMessage = "Bitte {0} Fullen sie Aus")]
         public string Name { get; set; }
 
         [Display(Name="Description")]
+        [Required(ErrorMessage = "Bitte {0} Fullen sie Aus")]
         public string Description { get; set; }
 
         [Display(Name="Priority")]

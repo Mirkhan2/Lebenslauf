@@ -15,6 +15,7 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
             _educationService = educationService;
         }
         #endregion
+
         public async Task<IActionResult> Index()
         {
             return View(await _educationService.GetAllEducations());

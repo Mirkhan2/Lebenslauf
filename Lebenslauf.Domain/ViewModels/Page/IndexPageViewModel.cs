@@ -12,7 +12,7 @@ namespace Lebenslauf.Domain.ViewModels.Page
     public class IndexPageViewModel
     {
         public List<ThingIDoListViewModel> ThingIDoList { get; set; }
-        public List<CustomerFeedBackViewModel> CustomerFeedBackList { get; set; }
+        public List<CustomerFeedbackViewModel> CustomerFeedbackList { get; set; }
         public List<CustomerLogoListViewModel> CustomerLogoList { get; set; }
 
     }

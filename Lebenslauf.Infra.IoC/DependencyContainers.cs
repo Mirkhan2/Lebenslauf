@@ -14,7 +14,7 @@ namespace Lebenslauf.Infra.IoC
         public static  void RegisterService(IServiceCollection service)
         {
             service.AddScoped<IThingIDoService, ThingsIDoService>();
-            service.AddScoped<ICustomerFeedBackService, CustomerFeedBackService>();
+            service.AddScoped<ICustomerFeedbackService, CustomerFeedbackService>();
             service.AddScoped<IEducationService, EducationService>();
             service.AddScoped<ICustomerLogoService, CustomerLogoService>();
             service.AddScoped<IErfahrungService, ErfahrungService>();

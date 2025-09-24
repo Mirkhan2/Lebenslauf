@@ -31,5 +31,8 @@ namespace Lebenslauf.Domain.ViewModels.Erfahrung
         [Display(Name = "prioritat")]
         public int Order { get; set; }
 
+        [Display(Name = "Darsad")]
+        public double Percent { get; set; }
+
     }
 }

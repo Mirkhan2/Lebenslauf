@@ -20,6 +20,14 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 6.0
 build_property.EnableCodeStyleSeverity = 
 
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/CustomerFeedBack/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJGZWVkQmFja1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/CustomerFeedBack/_CustomerFeedbackModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcQ3VzdG9tZXJGZWVkQmFja1xfQ3VzdG9tZXJGZWVkYmFja01vZGFsUGFydGlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Education/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRWR1Y2F0aW9uXGluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -28,8 +36,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRWR1Y2F0aW9uXF9FZHVjYXRpb25Gb3JtTW9kYWxQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Erfahrung/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXJmYWhydW5nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Erfahrung/_ErfahrungFormModalPatial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRXJmYWhydW5nXF9FcmZhaHJ1bmdGb3JtTW9kYWxQYXRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/PortfolioCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9ydGZvbGlvQ2F0ZWdvcnlcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/PortfolioCategory/_PortfolioCategoryFormModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9ydGZvbGlvQ2F0ZWdvcnlcX1BvcnRmb2xpb0NhdGVnb3J5Rm9ybU1vZGFsUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Shared/_AdminFooterRefrencesPartial.cshtml]

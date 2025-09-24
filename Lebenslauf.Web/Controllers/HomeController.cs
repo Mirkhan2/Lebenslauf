@@ -11,11 +11,11 @@ namespace Lebenslauf.Web.Controllers
     {
         #region Constructor
         private readonly IThingIDoService _thingIDoService;
-        private readonly ICustomerFeedBackService _customerFeedbackService;
+        private readonly ICustomerFeedbackService _customerFeedbackService;
         private readonly ICustomerLogoService _customerLogoService;
 
 
-        public HomeController(IThingIDoService thingIDoService, ICustomerFeedBackService customerFeedbackService, ICustomerLogoService customerLogoService)
+        public HomeController(IThingIDoService thingIDoService, ICustomerFeedbackService customerFeedbackService, ICustomerLogoService customerLogoService)
         {
             _thingIDoService = thingIDoService;
             _customerFeedbackService = customerFeedbackService;
@@ -28,7 +28,7 @@ namespace Lebenslauf.Web.Controllers
             IndexPageViewModel model = new IndexPageViewModel()
             {
                 ThingIDoList = await _thingIDoService.GetAllThingIDoForIndex(),
-                CustomerFeedBackList = await _customerFeedbackService.GetCustomerFeedBackForIndex(),
+                CustomerFeedbackList = await _customerFeedbackService.GetCustomerFeedbackForIndex(),
                 CustomerLogoList = await _customerLogoService.GetCustomerLogoForIndexPage()
             };
             return View(model);

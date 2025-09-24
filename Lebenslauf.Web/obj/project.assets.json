@@ -699,6 +699,23 @@
       "MessagePackAnalyzer/2.1.152": {
         "type": "package"
       },
+      "Microsoft.AspNetCore.Http.Features/5.0.17": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Primitives": "5.0.1",
+          "System.IO.Pipelines": "5.0.2"
+        },
+        "compile": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Microsoft.AspNetCore.Razor.Language/6.0.0": {
         "type": "package",
         "compile": {
@@ -2261,6 +2278,22 @@
           "lib/netcoreapp2.0/_._": {}
         }
       },
+      "System.CodeDom/9.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.CodeDom.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/netcoreapp2.0/System.CodeDom.targets": {}
+        }
+      },
       "System.Collections/4.3.0": {
         "type": "package",
         "dependencies": {
@@ -2736,7 +2769,7 @@
           "lib/netstandard1.3/System.IO.FileSystem.Primitives.dll": {}
         }
       },
-      "System.IO.Pipelines/5.0.1": {
+      "System.IO.Pipelines/5.0.2": {
         "type": "package",
         "compile": {
           "ref/netcoreapp2.0/System.IO.Pipelines.dll": {
@@ -3665,7 +3698,8 @@
         "dependencies": {
           "HtmlSanitizer": "9.0.886",
           "Lebenslauf.Domain": "1.0.0",
-          "Lebenslauf.Infra.Data": "1.0.0"
+          "Lebenslauf.Infra.Data": "1.0.0",
+          "Microsoft.AspNetCore.Http.Features": "5.0.17"
         },
         "compile": {
           "bin/placeholder/Lebenslauf.Application.dll": {}
@@ -4580,6 +4614,25 @@
         "messagepackanalyzer.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
+      ]
+    },
+    "Microsoft.AspNetCore.Http.Features/5.0.17": {
+      "sha512": "3jG2xS+dx8DDCGV/F+STdPTg89lX3ao3dF/VEPvJaz3wzBIjuadipTtYNEXDIVuOPZwb6jdmhrX9jkzOIBm5cw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.http.features/5.0.17",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net461/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/net5.0/Microsoft.AspNetCore.Http.Features.xml",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
+        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
+        "microsoft.aspnetcore.http.features.5.0.17.nupkg.sha512",
+        "microsoft.aspnetcore.http.features.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/6.0.0": {
@@ -6846,6 +6899,34 @@
         "version.txt"
       ]
     },
+    "System.CodeDom/9.0.9": {
+      "sha512": "Az4ngSi0MO3Qwu1+BJRHnc2C8e7+x0oXj+Q++C/wru0vM8J2oL3QlliiZPdwPnR0VbiL0lH7izSIGQssMaRiGQ==",
+      "type": "package",
+      "path": "system.codedom/9.0.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.CodeDom.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/netcoreapp2.0/System.CodeDom.targets",
+        "lib/net462/System.CodeDom.dll",
+        "lib/net462/System.CodeDom.xml",
+        "lib/net8.0/System.CodeDom.dll",
+        "lib/net8.0/System.CodeDom.xml",
+        "lib/net9.0/System.CodeDom.dll",
+        "lib/net9.0/System.CodeDom.xml",
+        "lib/netstandard2.0/System.CodeDom.dll",
+        "lib/netstandard2.0/System.CodeDom.xml",
+        "system.codedom.9.0.9.nupkg.sha512",
+        "system.codedom.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
     "System.Collections/4.3.0": {
       "sha512": "3Dcj85/TBdVpL5Zr+gEEBUuFe2icOnLalmEh9hfck1PTYbbyWuZgh4fmm2ysCLTrqLQw6t3TgTyJ+VLp+Qb+Lw==",
       "type": "package",
@@ -7893,10 +7974,10 @@
         "system.io.filesystem.primitives.nuspec"
       ]
     },
-    "System.IO.Pipelines/5.0.1": {
-      "sha512": "qEePWsaq9LoEEIqhbGe6D5J8c9IqQOUuTzzV6wn1POlfdLkJliZY3OlB0j0f17uMWlqZYjH7txj+2YbyrIA8Yg==",
+    "System.IO.Pipelines/5.0.2": {
+      "sha512": "Iew+dfa6FFiyvWBdRmXApixRY1db+beyutpIck4SOSe0NLM8FD/7AD54MscqVLhvfSMLHO7KadjTRT7fqxOGTA==",
       "type": "package",
-      "path": "system.io.pipelines/5.0.1",
+      "path": "system.io.pipelines/5.0.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
@@ -7913,7 +7994,7 @@
         "lib/netstandard2.0/System.IO.Pipelines.xml",
         "ref/netcoreapp2.0/System.IO.Pipelines.dll",
         "ref/netcoreapp2.0/System.IO.Pipelines.xml",
-        "system.io.pipelines.5.0.1.nupkg.sha512",
+        "system.io.pipelines.5.0.2.nupkg.sha512",
         "system.io.pipelines.nuspec",
         "useSharedDesignerContext.txt",
         "version.txt"
@@ -10474,7 +10555,8 @@
       "Microsoft.EntityFrameworkCore.Relational >= 6.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.0",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.0",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.18"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 6.0.18",
+      "System.CodeDom >= 9.0.9"
     ]
   },
   "packageFolders": {
@@ -10563,6 +10645,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[6.0.18, )"
+          },
+          "System.CodeDom": {
+            "target": "Package",
+            "version": "[9.0.9, )"
           }
         },
         "imports": [
@@ -10602,7 +10688,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.305\\RuntimeIdentifierGraph.json"
       }
     }
   }
