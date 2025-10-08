@@ -56,6 +56,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9ydGZvbGlvQ2F0ZWdvcnlcX1BvcnRmb2xpb0NhdGVnb3J5Rm9ybU1vZGFsUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Portfolio/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9ydGZvbGlvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Portfolio/_PortfolioFormModalPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUG9ydGZvbGlvXF9Qb3J0Zm9saW9Gb3JtTW9kYWxQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/mirkh/source/repos/Lebenslauf/Lebenslauf.Web/Areas/Admin/Views/Shared/_AdminFooterRefrencesPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkZvb3RlclJlZnJlbmNlc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lebenslauf.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+df38c723e9eca63c46c39cf814cc3fc1ee18788b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0166f6c269e4a8a088af3303975fe60fd16bc929")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lebenslauf.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lebenslauf.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
