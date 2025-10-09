@@ -1,9 +1,10 @@
-﻿using Lebenslauf.Application.Services.Interfaces;
+﻿using Lebenslauf.Application.Extensions;
+using Lebenslauf.Application.Generator;
+using Lebenslauf.Application.Services.Interfaces;
 using Lebenslauf.Application.StaticTools;
 using Lebenslauf.Domain.ViewModels.Portfolio;
 using Lebenslauf.Web.Areas.Controllers;
 using Microsoft.AspNetCore.Mvc;
-using System.CodeDom.Compiler;
 
 namespace Lebenslauf.Web.Areas.Admin.Controllers
 {
@@ -49,7 +50,7 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
                 if (Path.GetExtension(file.FileName) == ".png" || Path.GetExtension(file.FileName) == ".jpg")
                 {
                     var imageName = CodeGenerator.GenericUniqCode() + Path.GetExtension(file.FileName);
-                    await file.AddImageAjaxServer(imageName, FilePath.CustomerFeedbackAvatarServer);
+                    await file.AddImageAjaxToServer(imageName, FilePath.CustomerFeedbackAvatarServer);
                     return new JsonResult(new { status = "Success", imageName = imageName });
                 }
                 else
@@ -62,4 +63,5 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
                 return new JsonResult(new { status = "Error" });
             }
         }
+}
 }

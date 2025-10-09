@@ -28,6 +28,8 @@ namespace Lebenslauf.Application.Services.Implementions
         public async Task<List<PortfolioViewModel>> GetAllPortfolios()
         {
             List<PortfolioViewModel> portfolios = await _context.Portfolios
+                // Add this line to load the related data
+                .Include(p => p.PortfolioCategory)
                 .OrderBy(p => p.Order)
                 .Select(p => new PortfolioViewModel()
                 {

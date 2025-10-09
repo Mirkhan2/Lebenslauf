@@ -42,10 +42,11 @@ namespace Lebenslauf.Application.StaticTools
         #endregion
 
 
-        #region Resume
+        #region Lebenslauf
         public static readonly string Resume = $"{BaseImagePath}/resume/origin/";
         public static readonly string ResumeServer = Path.Combine(Directory.GetCurrentDirectory(), $"{BaseImagePathServer}/resume/origin/");
         #endregion
+
     }
 }
 

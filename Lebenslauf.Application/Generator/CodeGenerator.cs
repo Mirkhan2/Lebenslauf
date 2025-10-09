@@ -6,11 +6,18 @@ using System.Threading.Tasks;
 
 namespace Lebenslauf.Application.Generator
 {
-     class CodeGenerator
+    public static class CodeGenerator
     {
         public static string GenerateUniqCode()
         {
-            return Guid.NewGuid().ToString("N");
+            throw new NotImplementedException();
+        }
+
+        public static string GenericUniqCode()
+        {
+            // Generate a unique string (e.g., based on a GUID)
+            return Guid.NewGuid().ToString("N"); // "N" removes dashes
         }
     }
+
 }

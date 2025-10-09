@@ -1,71 +1,134 @@
-﻿@model List<PortfolioViewModel>
-@using Lebenslauf.Domain.ViewModels.Portfolio
-@using Lebenslauf.Application.StaticTools
+﻿@model Lebenslauf.Domain.ViewModels.Portfolio.CreateOrEditPortfolioViewModel
 
 @{
-    ViewData["Title"] = "Liste  was ich tun kann";
+    bool isCreate = Model.Id == 0 ? true : false;
 }
 
-<!-- Content Header (Page header) -->
-<div class="content-header">
-    <div class="d-flex align-items-center">
-        <div class="mr-auto">
-            <h3 class="page-title">@ViewData["Title"]</h3>
-        </div>
-        <div class="right-title">
-            <button type="button" onclick="LoadPortfolioFormModal(0)" class="btn btn-circle btn-success mb-5"><i class="mdi mdi-plus"></i></button>
-        </div>
+
+<form id="PortfolioForm" asp-area="Admin" asp-controller="Portfolio" asp-action="SubmitPortfolioFormModal"
+      data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="PortfolioFormSubmited">
+
+    <div class="modal-header">
+        <h5 class="modal-title">@(isCreate ? "Erofnnen" : "Bearbeitung")</h5>
+        <button type="button" class="close" data-dismiss="modal">
+            <span aria-hidden="true">&times;</span>
+        </button>
     </div>
-</div>
 
-<!-- Main content -->
-<section class="content">
 
-    <div class="row">
-        <div class="col-12">
-            <div class="box">
-                <div class="box-body" id="data-table-box">
-                    <div class="table-responsive">
-                        <table class="table table-hover no-wrap data-table">
-                            <thead>
-                                <tr class="bg-secondary">
-                                    <th>Bild</th>
-                                    <th>Thema</th>
-                                    <th>Link</th>
-                                    <th>Prioritat</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
+    <div class="modal-body">
 
-                                @if (Model != null && Model.Any())
-                                {
-                                    @foreach (PortfolioViewModel item in Model)
-                                    {
-                                        <tr id="ListItem-@(item.Id)">
-                                            <td><img width="150" height="150" src="@($"{FilePath.Portfolio}{item.Image}")" /></td>
-                                            <td>@item.Title</td>
-                                            <td>@item.Link</td>
-                                            <td>@item.Order</td>
-                                            <td>
-                                                <button onclick="LoadPortfolioFormModal(@item.Id)" class="btn btn-icon-circle btn-warning">
-                                                    <i class="ti-marker-alt"></i>
-                                                </button>
-                                                <button onclick="DeletePortfolio(@item.Id)" class="btn btn-icon-circle btn-danger">
-                                                    <i class="ti-trash"></i>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    }
-                                }
+        <div class="row">
+            <div class="col-12">
 
-                            </tbody>
-                        </table>
+                <input type="hidden" asp-for="Image">
+
+                @if (!isCreate)
+                {
+                    <input type="hidden" asp-for="Id" />
+                }
+
+                <div class="form-group">
+                    <label asp-for="Title"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Title" class="form-control">
                     </div>
+                    <span asp-validation-for="Title" class="text-danger"></span>
                 </div>
+
+                <div class="form-group">
+                    <label asp-for="Link"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="Link" class="form-control">
+                    </div>
+                    <span asp-validation-for="Link" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Order"></label>
+                    <div class="controls">
+                        <input type="number" asp-for="Order" class="form-control">
+                    </div>
+                    <span asp-validation-for="Order" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageAlt"></label>
+                    <div class="controls">
+                        <input type="text" asp-for="ImageAlt" class="form-control">
+                    </div>
+                    <span asp-validation-for="ImageAlt" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="image-upload">Avatar</label>
+                    <div class="controls">
+                        <input type="file" name="image-upload" id="image-upload" class="form-control" />
+                    </div>
+                    <span asp-validation-for="Image" class="text-danger"></span>
+                </div>
+
+                <div class="col-md-4">
+                    <label asp-for="PortfolioCategoryId"></label>
+                    <select asp-for="PortfolioCategoryId" class="selectpicker">
+                        @foreach (var item in Model.PortfolioCategories)
+                        {
+                            <option value="@item.Id">@item.Name</option>
+                        }
+                    </select>
+                </div>
+
+                <div>
+                    <button type="submit" class="btn btn-bold btn-pure float-right @(isCreate ? "btn-success" : "btn-warning")">@(isCreate ? "Eroffnen" : "Bearbeitung")</button>
+                </div>
+
             </div>
         </div>
+
     </div>
 
-</section>
-<!-- /.content -->
+</form>
+
+
+<script>
+    $("#image-upload").change(function () {
+
+        const imageFile = $('input#image-upload')[0].files[0]
+
+        if (imageFile.name.split('.').pop() === "png" || imageFile.name.split('.').pop() === "jpeg" || imageFile.name.split('.').pop() === "jpg") {
+
+            const fd = new FormData();
+            fd.append("file", imageFile);
+
+            $.ajax({
+                type: "Post",
+                url: "/Admin/Portfolio/UploadPortfolioImageAjax",
+                enctype: "multipart/form-data",
+                data: fd,
+                beforeSend: function () {
+                    ShowMessage("اعلان", "لطفا تا انتهای بارگذاری صبر کنید ...", "info")
+                },
+                success: function (response) {
+                    if (response.status === "Success") {
+                        ShowMessage("اعلان", "فایل مورد نظر با موفقیت بارگذاری شد .", "success");
+                        $("#Image").val(response.imageName);
+                    }
+                    else if (response.status === "Error") {
+                        ShowMessage("Error", "فرمت فایل باید jpeg ، jpeg یا png باشد", "error")
+                    }
+                },
+                error: function () {
+                    ShowMessage("Error", "در بارگذاری فایل خطایی رخ داده است .", "error")
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            })
+        }
+        else {
+            ShowMessage("خطا", "فرمت فایل باید jpeg ، jpeg یا png باشد", "error")
+        }
+
+
+    });
+</script>

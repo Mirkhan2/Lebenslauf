@@ -19,14 +19,10 @@ namespace Lebenslauf.Infra.IoC
             service.AddScoped<ICustomerLogoService, CustomerLogoService>();
             service.AddScoped<IErfahrungService, ErfahrungService>();
             service.AddScoped<IPortfolioService, PortfolioService>();
+            service.AddScoped<IFahigkeitService, FahigkeitService>();
             service.AddScoped<ISocialMediaService, SocialMediaService>();
             service.AddScoped<IInformationService, InformationService>();
             service.AddScoped<IMessageService , MessageService>();
-
-
-
-
-
         }
 
     }

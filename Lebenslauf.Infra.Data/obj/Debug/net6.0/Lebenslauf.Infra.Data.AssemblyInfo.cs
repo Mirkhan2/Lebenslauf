@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Lebenslauf.Infra.Data")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0166f6c269e4a8a088af3303975fe60fd16bc929")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ecfe37c9bad836370a33868a1fd148288d40fff")]
 [assembly: System.Reflection.AssemblyProductAttribute("Lebenslauf.Infra.Data")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Lebenslauf.Infra.Data")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

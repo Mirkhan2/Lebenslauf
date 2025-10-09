@@ -1,10 +1,11 @@
-﻿using Lebenslauf.Application.Services.Implementions;
+﻿
+using Lebenslauf.Application.Extensions;
+using Lebenslauf.Application.Generator;
 using Lebenslauf.Application.Services.Interfaces;
 using Lebenslauf.Application.StaticTools;
 using Lebenslauf.Domain.ViewModels.CustomerFeedBack;
 using Lebenslauf.Web.Areas.Controllers;
 using Microsoft.AspNetCore.Mvc;
-using System.CodeDom.Compiler;
 
 namespace Lebenslauf.Web.Areas.Admin.Controllers
 {
@@ -47,20 +48,22 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
 
             return new JsonResult(new { status = " Error" });
         }
-        public async Task<IActionResult> UploadCustomerFeedbackImageAjax(IFormFile file )
+        [HttpPost]  
+        public async Task<IActionResult> UploadCustomerFeedbackImageAjax(IFormFile file)
         {
+
             if (file != null)
             {
-                if (Path.GetExtension(file.FileName) == ".png" || Path.GetExtension(file.FileName) == ".jpg")
+                if (Path.GetExtension(file.FileName) == ".png" || Path.GetExtension(file.FileName) == ".jpeg" || Path.GetExtension(file.FileName) == ".jpg")
                 {
-                    var imageName = CodeGenerator.GenericUniqCode() + Path.GetExtension(file.FileName);
-                    await file.AddImageAjaxServer(imageName, FilePath.CustomerFeedbackAvatarServer);
+                    var imageName = CodeGenerator.GenerateUniqCode() + Path.GetExtension(file.FileName);
+                    await file.AddImageAjaxToServer(imageName, FilePath.CustomerFeedbackAvatarServer);
                     return new JsonResult(new { status = "Success", imageName = imageName });
+
                 }
                 else
                 {
                     return new JsonResult(new { status = "Error" });
-
                 }
             }
             else
