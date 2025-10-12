@@ -4,7 +4,7 @@
 
 namespace Lebenslauf.Infra.Data.Migrations
 {
-    public partial class InitAllTbl : Migration
+    public partial class AddAllTable : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -102,7 +102,8 @@ namespace Lebenslauf.Infra.Data.Migrations
                     Address = table.Column<string>(type: "nvarchar(1000)", maxLength: 1000, nullable: false),
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
-                    ResumeFile = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                    ResumeFile = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    MapSrc = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {

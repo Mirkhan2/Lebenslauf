@@ -36,7 +36,7 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
             if (result) return new JsonResult(new { status = "Success" });
             return new JsonResult(new { status = "Error" });
         }
-        public async Task<IActionResult> DeletePortfoliofeedback(long id)
+        public async Task<IActionResult> DeletePortfolio(long id)
         {
             var result = await _portfolioService.DeletePortfolioCategory(id);
             if (result) return new JsonResult(new { status = "Success" });
@@ -49,8 +49,8 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
             {
                 if (Path.GetExtension(file.FileName) == ".png" || Path.GetExtension(file.FileName) == ".jpg")
                 {
-                    var imageName = CodeGenerator.GenericUniqCode() + Path.GetExtension(file.FileName);
-                    await file.AddImageAjaxToServer(imageName, FilePath.CustomerFeedbackAvatarServer);
+                    var imageName = CodeGenerator.GenerateUniqCode() + Path.GetExtension(file.FileName);
+                    await file.AddImageAjaxToServer(imageName, FilePath.CustomerFeedbackAvatar);
                     return new JsonResult(new { status = "Success", imageName = imageName });
                 }
                 else

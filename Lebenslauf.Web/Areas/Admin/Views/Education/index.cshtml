@@ -1,8 +1,8 @@
-﻿@model List<EducationViewModel>
-@using Lebenslauf.Domain.ViewModels.Education
+﻿@model List<MessageViewModel>
+@using Lebenslauf.Domain.ViewModels.Message
 
 @{
-    ViewData["Title"] = " Education Liste";
+    ViewData["Title"] = " Message Liste";
 }
 
 
@@ -41,19 +41,17 @@
 
                                 @if (Model != null && Model.Any())
                                 {
-                                    @foreach (EducationViewModel item in Model)
+                                    @foreach (MessageViewModel item in Model)
                                     {
                                         <tr id="ListItem-@(item.Id)">
-                                            <td>@item.Title</td>
-                                            <td>@item.Description</td>
-                                            <td>@item.StartDate</td>
-                                            <td>@item.EndDate</td>
-                                            <td>@item.Order</td>
+                                            <td>@item.Name</td>
+                                            <td>@item.Email</td>
+                                            <td>@item.Text</td>
                                             <td>
                                                 <button onclick="LoadEducationFormModal(@item.Id)" class="btn btn-icon-circle btn-warning">
                                                     <i class="ti-marker-alt"></i>
                                                 </button>
-                                                <button onclick="DeleteEducation(@item.Id)" class="btn btn-icon-circle btn-danger">
+                                                <button onclick="DeleteMessage(@item.Id)" class="btn btn-icon-circle btn-danger">
                                                     <i class="ti-trash"></i>
                                                 </button>
                                             </td>

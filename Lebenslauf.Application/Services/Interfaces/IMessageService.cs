@@ -10,5 +10,7 @@ namespace Lebenslauf.Application.Services.Interfaces
     public interface IMessageService
     {
         Task<bool> CreateMessage(CreateMessageViewModel message);
+        Task<List<MessageViewModel>> GetAllMessages();
+        Task<bool> DeleteMessage(long id);
     }
 }

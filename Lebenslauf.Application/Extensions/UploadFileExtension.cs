@@ -10,7 +10,6 @@ namespace Lebenslauf.Application.Extensions
 {
     public static class UploadFileExtension
     {
-
         public static async Task AddImageAjaxToServer(this IFormFile file, string fileName, string orginalPath)
         {
             if (file != null)
@@ -26,7 +25,6 @@ namespace Lebenslauf.Application.Extensions
 
             }
         }
-
 
     }
 }

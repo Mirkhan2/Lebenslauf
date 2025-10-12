@@ -11,9 +11,6 @@ namespace Lebenslauf.Domain.ViewModels.Portfolio
 {
     public class CreateOrEditPortfolioViewModel
     {
-        
-
-            
             public long Id { get; set; }
 
 

@@ -1,4 +1,4 @@
-﻿@model Lebenslauf.Domain.ViewModels.Portfolio.CreateOrEditPortfolioViewModel
+﻿@model Lebenslauf.Domain.ViewModels.Portfolio.CreateOrEditPortfolioCategoryViewModel
 
 @{
     bool isCreate = Model.Id == 0 ? true : false;
@@ -53,11 +53,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="ImageAlt"></label>
+                    <label asp-for="Image"></label>
                     <div class="controls">
-                        <input type="text" asp-for="ImageAlt" class="form-control">
+                        <input type="text" asp-for="Image" class="form-control">
                     </div>
-                    <span asp-validation-for="ImageAlt" class="text-danger"></span>
+                    <span asp-validation-for="Image" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
@@ -68,7 +68,7 @@
                     <span asp-validation-for="Image" class="text-danger"></span>
                 </div>
 
-                <div class="col-md-4">
+           @*      <div class="col-md-4">
                     <label asp-for="PortfolioCategoryId"></label>
                     <select asp-for="PortfolioCategoryId" class="selectpicker">
                         @foreach (var item in Model.PortfolioCategories)
@@ -76,10 +76,10 @@
                             <option value="@item.Id">@item.Name</option>
                         }
                     </select>
-                </div>
+                </div> *@
 
                 <div>
-                    <button type="submit" class="btn btn-bold btn-pure float-right @(isCreate ? "btn-success" : "btn-warning")">@(isCreate ? "Eroffnen" : "Bearbeitung")</button>
+                    <button type="submit" class="btn btn-bold btn-pure float-right @(isCreate ? "btn-success" : "btn-warning")">@(isCreate ? "ایجاد" : "ویرایش")</button>
                 </div>
 
             </div>
@@ -88,7 +88,6 @@
     </div>
 
 </form>
-
 
 <script>
     $("#image-upload").change(function () {
@@ -99,26 +98,25 @@
 
             const fd = new FormData();
             fd.append("file", imageFile);
-
             $.ajax({
                 type: "Post",
                 url: "/Admin/Portfolio/UploadPortfolioImageAjax",
                 enctype: "multipart/form-data",
                 data: fd,
                 beforeSend: function () {
-                    ShowMessage("اعلان", "لطفا تا انتهای بارگذاری صبر کنید ...", "info")
+                    ShowMessage("Ankundigen", "لBitte warten Sie, bis der Upload abgeschlossen ist... ...", "info")
                 },
                 success: function (response) {
                     if (response.status === "Success") {
-                        ShowMessage("اعلان", "فایل مورد نظر با موفقیت بارگذاری شد .", "success");
+                        ShowMessage("Ankundigen", " Die gewünschte Datei wurde erfolgreich hochgeladen..", "success");
                         $("#Image").val(response.imageName);
                     }
                     else if (response.status === "Error") {
-                        ShowMessage("Error", "فرمت فایل باید jpeg ، jpeg یا png باشد", "error")
+                        ShowMessage("Error", "Format Ordner soll jpeg ، jpeg Oder png Sein", "error")
                     }
                 },
                 error: function () {
-                    ShowMessage("Error", "در بارگذاری فایل خطایی رخ داده است .", "error")
+                    ShowMessage("Error", "Beim Hochladen der Datei ist ein Fehler aufgetreten. .", "error")
                 },
                 cache: false,
                 contentType: false,
@@ -126,9 +124,7 @@
             })
         }
         else {
-            ShowMessage("خطا", "فرمت فایل باید jpeg ، jpeg یا png باشد", "error")
+            ShowMessage("Error", "  Format Ordner Soll jpeg ، jpeg Oder png sein", "error")
         }
-
-
     });
 </script>

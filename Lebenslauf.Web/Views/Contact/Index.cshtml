@@ -1,5 +1,4 @@
 ﻿@model Lebenslauf.Domain.ViewModels.Message.CreateMessageViewModel
-//TODO MapSRC
 @using Lebenslauf.Domain.ViewModels.Information
 
 @{
@@ -7,11 +6,11 @@
     var information = ViewData["Information"] as InformationViewModel;
 }
 
-@section Script{
+@section Script {
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <partial name="_CaptchaScriptPartial" />
-}
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 @if (formSubmitResult != null && formSubmitResult == true)
 {
@@ -41,15 +40,16 @@ else if (formSubmitResult != null && formSubmitResult == false)
 }
 
 }
-@* @if (!string.IsNullOrEmpty(information.MapSrc))
+@if (!string.IsNullOrEmpty(information.MapSrc))
 {
     <div class="section mt-0">
-        <h1 class="title title--h1 title__separate">تماس با من</h1>
+        <h1 class="title title--h1 title__separate">mich zu kontaktieren  </h1>
     </div>
     <div class="map section">
         <iframe src="@information.MapSrc" height="450" style="border:0;" allowfullscreen=""></iframe>
     </div>
-} *@
+}
+
 <h2 class="title title--h2"> Kontakt FOrmular</h2>
 
 <form class="contact-form" asp-controller="Contact" asp-action="Index" method="post">

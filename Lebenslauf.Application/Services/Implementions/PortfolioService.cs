@@ -154,7 +154,7 @@ namespace Lebenslauf.Application.Services.Implementions
             return new CreateOrEditPortfolioCategoryViewModel() 
             {
                 Id= portfolioCategory.Id,
-                //Name = portfolioCategory.Name,
+                Name = portfolioCategory.Name,
                 Order = portfolioCategory.Order,
                 Title = portfolioCategory.Title
             };

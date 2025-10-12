@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lebenslauf.Domain.ViewModels.Information
 {
-    public class InformationViewModel
+    public class CreateOrEditInformationViewModel
     {
         public long Id { get; set; }
 

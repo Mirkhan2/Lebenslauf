@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Lebenslauf.Infra.IoC\Lebenslauf.Infra.IoC.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\Admin\Views\Message\" />
+  </ItemGroup>
+
 </Project>

@@ -12,7 +12,6 @@ namespace Lebenslauf.Domain.Models
         [Key]
         public long Id { get; set; }
 
-
         [Display(Name = "Avatar")]
         public string Avatar { get; set; }
 
@@ -49,8 +48,7 @@ namespace Lebenslauf.Domain.Models
         [MaxLength(100, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
         public string ResumeFile { get; set; }
 
+        [Display(Name = "mapsnavigation")]
+        public string MapSrc { get; set; }
     }
 }
-//   [Required(ErrorMessage = "Bitte geben Sie {0} ein")]
-//[MaxLength(100, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
-
