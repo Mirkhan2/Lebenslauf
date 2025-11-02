@@ -25,7 +25,6 @@ namespace Lebenslauf.Application.Services.Implementions
             Message newMessage = new Message()
             {
                 Email = message.Email.SanitizeText(),
-             
                 Name = message.Name.SanitizeText(),
                 Text = message.Text.SanitizeText(),
             };
@@ -50,7 +49,6 @@ namespace Lebenslauf.Application.Services.Implementions
 
             return messages;
         }
-
 
         public async Task<bool> DeleteMessage(long id)
         {
