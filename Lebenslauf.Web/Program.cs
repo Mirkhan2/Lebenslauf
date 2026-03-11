@@ -39,10 +39,10 @@ builder.Services.AddSingleton<HtmlEncoder>(
 var app = builder.Build();
 
 // ---------------------- Middleware-Pipeline ----------------------
-if (app.Environment.IsDevelopment())
-{
+ if (app.Environment.IsDevelopment())
+ {
     app.UseDeveloperExceptionPage();
-}
+ }
 else
 {
     app.UseExceptionHandler("/Home/Error");
