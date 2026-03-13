@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Lebenslauf.Application.Services.Interfaces;
 using Lebenslauf.Domain.Models;
 using Lebenslauf.Domain.ViewModels.Information;
@@ -13,51 +9,42 @@ namespace Lebenslauf.Application.Services.Implementions
 {
     public class InformationService : IInformationService
     {
-        #region COntrcutor
+        #region Constructor
         private readonly AppDbContext _context;
         public InformationService(AppDbContext context)
         {
             _context = context;
         }
-
-      
         #endregion
 
         public async Task<InformationViewModel> GetInformation()
         {
-            InformationViewModel information = await _context.Informations
-                .Select(i => new InformationViewModel()
-                {
-                    Address = i.Address,
-                    Avatar = i.Avatar,
-                    DateOfBirth = i.DateOfBirth,
-                    Email = i.Email,
-                    Id = i.Id,
-                    Job = i.Job,
-                    Name = i.Name,
-                    Phone = i.Phone,
-                    ResumeFile = i.ResumeFile,
-                    MapSrc = i.MapSrc
-                })
-                .FirstOrDefaultAsync();
+            var info = await _context.Informations.FirstOrDefaultAsync();
+            if (info == null) return new InformationViewModel();
 
-
-            if (information == null)
+            return new InformationViewModel()
             {
-                return new InformationViewModel();
-            }
-
-            return information;
+                Id = info.Id,
+                Address = info.Address,
+                Avatar = info.Avatar,
+                DateOfBirth = info.DateOfBirth,
+                Email = info.Email,
+                Job = info.Job,
+                Name = info.Name,
+                Phone = info.Phone,
+                ResumeFile = info.ResumeFile,
+                MapSrc = info.MapSrc
+            };
         }
 
-
-        public Task<Information> GetInformationModel()
+        public Task<Information> GetInformationModel(long id)
         {
-            return _context.Informations.FirstOrDefaultAsync();
+            return _context.Informations.FirstOrDefaultAsync(i => i.Id == id);
         }
+
         public async Task<CreateOrEditInformationViewModel> FillCreateOrEditInformationViewModel()
         {
-            Information information = await GetInformationModel();
+            Information information = await _context.Informations.FirstOrDefaultAsync();
             if (information == null) return new CreateOrEditInformationViewModel() { Id = 0 };
 
             return new CreateOrEditInformationViewModel()
@@ -96,17 +83,25 @@ namespace Lebenslauf.Application.Services.Implementions
                 return true;
             }
 
-        Information currentInformation = await GetInformationModel();
+            Information currentInformation = await GetInformationModel(information.Id);
+
             if (currentInformation == null) return false;
+
             currentInformation.Address = information.Address;
-            currentInformation.Avatar = information.Avatar;
+
+            if (!string.IsNullOrEmpty(information.Avatar))
+                currentInformation.Avatar = information.Avatar;
+
+            if (!string.IsNullOrEmpty(information.ResumeFile))
+                currentInformation.ResumeFile = information.ResumeFile;
+
             currentInformation.DateOfBirth = information.DateOfBirth;
             currentInformation.Email = information.Email;
             currentInformation.Job = information.Job;
             currentInformation.Name = information.Name;
             currentInformation.Phone = information.Phone;
-            currentInformation.ResumeFile = information.ResumeFile;
             currentInformation.MapSrc = information.MapSrc;
+
             _context.Informations.Update(currentInformation);
             await _context.SaveChangesAsync();
             return true;

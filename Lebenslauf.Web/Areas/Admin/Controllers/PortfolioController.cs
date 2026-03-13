@@ -5,6 +5,9 @@ using Lebenslauf.Application.StaticTools;
 using Lebenslauf.Domain.ViewModels.Portfolio;
 using Lebenslauf.Web.Areas.Controllers;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace Lebenslauf.Web.Areas.Admin.Controllers
 {
@@ -25,32 +28,39 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> LoadPortfolioFormModal(long id)
         {
-            CreateOrEditPortfolioCategoryViewModel result = await _portfolioService.FillCreateOrEditPortfolioCategoryViewModel(id);
+            CreateOrEditPortfolioViewModel result = await _portfolioService.FillCreateOrEditPortfolioViewModel(id);
             return PartialView("_PortfolioFormModalPartial", result);
-
         }
 
-        public async Task<IActionResult> SubmitPortfolioFormModal(CreateOrEditPortfolioCategoryViewModel portfolio)
+        [HttpPost]
+        public async Task<IActionResult> SubmitPortfolioFormModal(CreateOrEditPortfolioViewModel portfolio)
         {
-            var result = await _portfolioService.CreateOrEditPortfolioCategory(portfolio);
+            var result = await _portfolioService.CreateOrEditPortfolio(portfolio);
             if (result) return new JsonResult(new { status = "Success" });
+
             return new JsonResult(new { status = "Error" });
         }
+
         public async Task<IActionResult> DeletePortfolio(long id)
         {
-            var result = await _portfolioService.DeletePortfolioCategory(id);
+            var result = await _portfolioService.DeletePortfolio(id);
             if (result) return new JsonResult(new { status = "Success" });
+
             return new JsonResult(new { status = "Error" });
         }
+
         [HttpPost]
         public async Task<IActionResult> UploadPortfolioImageAjax(IFormFile file)
         {
             if (file != null)
             {
-                if (Path.GetExtension(file.FileName) == ".png" || Path.GetExtension(file.FileName) == ".jpg")
+                
+                var ext = Path.GetExtension(file.FileName).ToLower();
+
+                if (ext == ".png" || ext == ".jpg" || ext == ".jpeg")
                 {
-                    var imageName = CodeGenerator.GenerateUniqCode() + Path.GetExtension(file.FileName);
-                    await file.AddImageAjaxToServer(imageName, FilePath.CustomerFeedbackAvatar);
+                    var imageName = CodeGenerator.GenerateUniqCode() + ext;
+                    await file.AddImageAjaxToServer(imageName, FilePath.PortfolioServer);
                     return new JsonResult(new { status = "Success", imageName = imageName });
                 }
                 else
@@ -58,10 +68,7 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
                     return new JsonResult(new { status = "Error" });
                 }
             }
-            else
-            {
-                return new JsonResult(new { status = "Error" });
-            }
+            return new JsonResult(new { status = "Error" });
         }
-}
+    }
 }

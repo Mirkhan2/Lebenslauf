@@ -1,11 +1,11 @@
-﻿@model Lebenslauf.Domain.ViewModels.Portfolio.CreateOrEditPortfolioViewModel
+﻿@model Lebenslauf.Domain.ViewModels.CustomerFeedBack.CreateOrEditCustomerFeedbackViewModel
 @{
-    Layout = null;
+    Layout = null; 
     bool isCreate = Model.Id == 0;
 }
 
-<form id="PortfolioForm" asp-area="Admin" asp-controller="Portfolio" asp-action="SubmitPortfolioFormModal"
-      data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="PortfolioFormSubmited">
+<form id="CustomerFeedbackForm" asp-area="Admin" asp-controller="CustomerFeedback" asp-action="SubmitCustomerFeedbackFormModal"
+      data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="CustomerFeedbackFormSubmited">
 
     <div class="modal-header">
         <h5 class="modal-title">@(isCreate ? "Erstellen" : "Bearbeiten")</h5>
@@ -17,7 +17,8 @@
     <div class="modal-body">
         <div class="row">
             <div class="col-12">
-                <input type="hidden" asp-for="Image" id="HiddenPortfolioImage">
+
+                <input type="hidden" asp-for="Avatar" id="HiddenAvatar">
 
                 @if (!isCreate)
                 {
@@ -25,43 +26,19 @@
                 }
 
                 <div class="form-group">
-                    <label asp-for="Title"></label>
+                    <label asp-for="Name"></label>
                     <div class="controls">
-                        <input type="text" asp-for="Title" class="form-control">
+                        <input type="text" asp-for="Name" class="form-control">
                     </div>
-                    <span asp-validation-for="Title" class="text-danger"></span>
+                    <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Link"></label>
+                    <label asp-for="Description"></label>
                     <div class="controls">
-                        <input type="text" asp-for="Link" class="form-control">
+                        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
                     </div>
-                    <span asp-validation-for="Link" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label>Kategorie (دسته‌بندی)</label>
-                    <div class="controls">
-                        <select asp-for="PortfolioCategoryId" class="form-control">
-                            @if (Model.PortfolioCategories != null && Model.PortfolioCategories.Any())
-                            {
-                                foreach (var cat in Model.PortfolioCategories)
-                                {
-                                    <option value="@cat.Id">@cat.Title</option>
-                                }
-                            }
-                        </select>
-                    </div>
-                    <span asp-validation-for="PortfolioCategoryId" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="ImageAlt"></label>
-                    <div class="controls">
-                        <input type="text" asp-for="ImageAlt" class="form-control" placeholder="SEO Text">
-                    </div>
-                    <span asp-validation-for="ImageAlt" class="text-danger"></span>
+                    <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
@@ -73,9 +50,9 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="portfolio-image-upload">Bild hochladen (PNG, JPG)</label>
+                    <label for="image">Avatar hochladen (JPG, PNG)</label>
                     <div class="controls">
-                        <input type="file" id="portfolio-image-upload" class="form-control" accept=".png,.jpg,.jpeg" />
+                        <input type="file" name="image" id="feedback-image" class="form-control" accept=".png,.jpg,.jpeg" />
                     </div>
                 </div>
 
@@ -90,7 +67,7 @@
 </form>
 
 <script>
-    $("#portfolio-image-upload").change(function () {
+    $("#feedback-image").change(function () {
         const imageFile = this.files[0];
         if (!imageFile) return;
 
@@ -102,14 +79,14 @@
 
             $.ajax({
                 type: "POST",
-                url: "/Admin/Portfolio/UploadPortfolioImageAjax",
+                url: "/Admin/CustomerFeedback/UploadCustomerFeedbackImageAjax",
                 enctype: "multipart/form-data",
                 data: fd,
                 beforeSend: function () { ShowMessage("Info", "Bitte warten...", "info"); },
                 success: function (response) {
                     if (response.status === "Success") {
-                        ShowMessage("Erfolgreich", "Bild wurde hochgeladen.", "success");
-                        $("#HiddenPortfolioImage").val(response.imageName);
+                        ShowMessage("Erfolgreich", "Avatar wurde hochgeladen.", "success");
+                        $("#HiddenAvatar").val(response.imageName);
                     } else { ShowMessage("Error", "Ein Fehler ist aufgetreten.", "error"); }
                 },
                 error: function () { ShowMessage("Error", "Serverfehler.", "error"); },

@@ -1,24 +1,21 @@
 ﻿@model Lebenslauf.Domain.ViewModels.Information.CreateOrEditInformationViewModel
 
 @{
-    Layout = "";
+    Layout = null; 
     bool isCreate = Model.Id == 0 ? true : false;
 }
-
 
 <form id="InformationForm" asp-area="Admin" asp-controller="Information" asp-action="SubmitInformationFormModal"
       data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="InformationFormSubmited">
 
     <div class="modal-header">
-        <h5 class="modal-title">@(isCreate ? "Erofnnen" : "Bearbeitung")</h5>
+        <h5 class="modal-title">@(isCreate ? "Eröffnen" : "Bearbeitung")</h5>
         <button type="button" class="close" data-dismiss="modal">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
 
-
     <div class="modal-body">
-
         <div class="row">
             <div class="col-12">
 
@@ -41,15 +38,7 @@
                 <div class="form-group">
                     <label asp-for="Job"></label>
                     <div class="controls">
-                        <input type="text" asp-for="Name" class="form-control">
-                    </div>
-                    <span asp-validation-for="Name" class="text-danger"></span>
-                </div>
-
-                <div class="form-group">
-                    <label asp-for="Job"></label>
-                    <div class="controls">
-                        <input type="number" asp-for="Job" class="form-control">
+                        <input type="text" asp-for="Job" class="form-control">
                     </div>
                     <span asp-validation-for="Job" class="text-danger"></span>
                 </div>
@@ -57,7 +46,7 @@
                 <div class="form-group">
                     <label asp-for="DateOfBirth"></label>
                     <div class="controls">
-                        <input type="text" asp-for="DateOfBirth" class="form-control">
+                        <input type="text" asp-for="DateOfBirth" class="form-control" placeholder="z.B. 01.01.1990">
                     </div>
                     <span asp-validation-for="DateOfBirth" class="text-danger"></span>
                 </div>
@@ -69,6 +58,7 @@
                     </div>
                     <span asp-validation-for="Email" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="Phone"></label>
                     <div class="controls">
@@ -76,6 +66,7 @@
                     </div>
                     <span asp-validation-for="Phone" class="text-danger"></span>
                 </div>
+
                 <div class="form-group">
                     <label asp-for="Address"></label>
                     <div class="controls">
@@ -93,22 +84,20 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="image-upload">Avatar</label>
+                    <label for="image-upload">Avatar (JPG, PNG)</label>
                     <div class="controls">
-                        <input type="file" name="image-upload" id="image-upload" class="form-control" />
+                        <input type="file" name="image-upload" id="image-upload" class="form-control" accept=".jpg, .jpeg, .png" />
                     </div>
-                    <span asp-validation-for="Avatar" class="text-danger"></span>
+                    <span id="avatar-upload-error" class="text-danger"></span>
                 </div>
-
 
                 <div class="form-group">
-                    <label for="file-upload"> File Lebenslauf</label>
+                    <label for="file-upload">Lebenslauf Datei (Nur PDF)</label>
                     <div class="controls">
-                        <input type="file" name="file-upload" id="file-upload" class="form-control" />
+                        <input type="file" name="file-upload" id="file-upload" class="form-control" accept=".pdf" />
                     </div>
-                    <span asp-validation-for="Avatar" class="text-danger"></span>
+                    <span id="resume-upload-error" class="text-danger"></span>
                 </div>
-
 
                 <div>
                     <button type="submit" class="btn btn-bold btn-pure float-right btn-warning">Bearbeiten</button>
@@ -116,47 +105,83 @@
 
             </div>
         </div>
-
     </div>
-
 </form>
 
 <script>
-    $("#file-upload").change(function () {
+    $("#image-upload").change(function () {
+        const imageFile = this.files[0];
+        if (!imageFile) return;
 
-        const imageFile = $('input#file-upload')[0].files[0]
+        const ext = imageFile.name.split('.').pop().toLowerCase();
 
-        if (imageFile.name.split('.').pop() === "pdf" ) {
-
+        if (ext === "png" || ext === "jpeg" || ext === "jpg") {
             const fd = new FormData();
             fd.append("file", imageFile);
+
             $.ajax({
-                type: "Post",
-                url: "/Admin/Information/UploadPortfolioImageAjax",
+                type: "POST",
+                url: "/Admin/Information/UploadInformationAvatarAjax", 
                 enctype: "multipart/form-data",
                 data: fd,
                 beforeSend: function () {
-                    ShowMessage("Ankundigen", "لBitte warten Sie, bis der Upload abgeschlossen ist... ...", "info")
+                    ShowMessage("Info", "Bitte warten Sie, bis der Upload abgeschlossen ist...", "info"); 
                 },
                 success: function (response) {
                     if (response.status === "Success") {
-                        ShowMessage("Ankundigen", " Die gewünschte Datei wurde erfolgreich hochgeladen..", "success");
-                        $("#LebenslaufFile").val(response.imageName);
-                    }
-                    else if (response.status === "Error") {
-                        ShowMessage("Error", "Format Ordner soll jpeg ، jpeg Oder png Sein", "error")
+                        ShowMessage("Erfolgreich", "Avatar wurde erfolgreich hochgeladen.", "success");
+                        $("#Avatar").val(response.imageName); 
+                    } else {
+                        ShowMessage("Error", "Ein Fehler ist aufgetreten.", "error");
                     }
                 },
                 error: function () {
-                    ShowMessage("Error", "Beim Hochladen der Datei ist ein Fehler aufgetreten. .", "error")
+                    ShowMessage("Error", "Beim Hochladen der Datei ist ein Serverfehler aufgetreten.", "error");
                 },
                 cache: false,
                 contentType: false,
                 processData: false
-            })
+            });
+        } else {
+            ShowMessage("Error", "Das Dateiformat muss JPG oder PNG sein.", "error");
         }
-        else {
-            ShowMessage("Error", "  Format Ordner Soll jpeg ، jpeg Oder png sein", "error")
+    });
+
+    $("#file-upload").change(function () {
+        const pdfFile = this.files[0];
+        if (!pdfFile) return;
+
+        const ext = pdfFile.name.split('.').pop().toLowerCase();
+
+        if (ext === "pdf") {
+            const fd = new FormData();
+            fd.append("file", pdfFile);
+
+            $.ajax({
+                type: "POST",
+                url: "/Admin/Information/UploadInformationResumeAjax", 
+                enctype: "multipart/form-data",
+                data: fd,
+                beforeSend: function () {
+                    ShowMessage("Info", "Bitte warten Sie, bis der Upload abgeschlossen ist...", "info");
+                },
+                success: function (response) {
+                    if (response.status === "Success") {
+                        ShowMessage("Erfolgreich", "Lebenslauf wurde erfolgreich hochgeladen.", "success");
+                        $("#ResumeFile").val(response.imageName); 
+                    } else {
+                        ShowMessage("Error", "Ein Fehler ist aufgetreten.", "error");
+                    }
+                },
+                error: function () {
+                    ShowMessage("Error", "Beim Hochladen der Datei ist ein Serverfehler aufgetreten.", "error");
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        } else {
+            ShowMessage("Error", "Das Dateiformat muss PDF sein.", "error");
         }
     });
 </script>

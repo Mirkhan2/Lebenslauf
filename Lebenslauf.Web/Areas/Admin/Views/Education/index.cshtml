@@ -1,12 +1,8 @@
-﻿@model List<MessageViewModel>
-@using Lebenslauf.Domain.ViewModels.Message
-
+﻿@model List<Lebenslauf.Domain.ViewModels.Education.EducationViewModel>
 @{
-    ViewData["Title"] = " Message Liste";
+    ViewData["Title"] = "Ausbildung Liste (تحصیلات)";
 }
 
-
-<!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="d-flex align-items-center">
         <div class="mr-auto">
@@ -18,9 +14,7 @@
     </div>
 </div>
 
-<!-- Main content -->
 <section class="content">
-
     <div class="row">
         <div class="col-12">
             <div class="box">
@@ -29,36 +23,34 @@
                         <table class="table table-hover no-wrap data-table">
                             <thead>
                                 <tr class="bg-secondary">
-                                    <th>Title</th>
-                                    <th>Erklarung</th>
-                                    <th> Datum Anfangen</th>
-                                    <th> Datum beenden</th>
-                                    <th>Prioritat</th>
-                                    <th></th>
+                                    <th>Thema</th>
+                                    <th>Datum Anfangen</th>
+                                    <th>Datum Beenden</th>
+                                    <th>Priorität</th>
+                                    <th>Aktionen</th>
                                 </tr>
                             </thead>
                             <tbody>
-
                                 @if (Model != null && Model.Any())
                                 {
-                                    @foreach (MessageViewModel item in Model)
+                                    @foreach (var item in Model)
                                     {
                                         <tr id="ListItem-@(item.Id)">
-                                            <td>@item.Name</td>
-                                            <td>@item.Email</td>
-                                            <td>@item.Text</td>
+                                            <td>@item.Title</td>
+                                            <td>@item.StartDate</td>
+                                            <td>@item.EndDate</td>
+                                            <td>@item.Order</td>
                                             <td>
                                                 <button onclick="LoadEducationFormModal(@item.Id)" class="btn btn-icon-circle btn-warning">
                                                     <i class="ti-marker-alt"></i>
                                                 </button>
-                                                <button onclick="DeleteMessage(@item.Id)" class="btn btn-icon-circle btn-danger">
+                                                <button onclick="DeleteEducation(@item.Id)" class="btn btn-icon-circle btn-danger">
                                                     <i class="ti-trash"></i>
                                                 </button>
                                             </td>
                                         </tr>
                                     }
                                 }
-
                             </tbody>
                         </table>
                     </div>
@@ -66,6 +58,4 @@
             </div>
         </div>
     </div>
-
 </section>
-<!-- /.content -->

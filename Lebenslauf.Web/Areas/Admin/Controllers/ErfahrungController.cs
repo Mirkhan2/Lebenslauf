@@ -1,4 +1,5 @@
-﻿using Lebenslauf.Application.Services.Interfaces;
+﻿using Lebenslauf.Application.Services.Implementions;
+using Lebenslauf.Application.Services.Interfaces;
 using Lebenslauf.Domain.ViewModels.Erfahrung;
 using Lebenslauf.Web.Areas.Controllers;
 using Microsoft.AspNetCore.Mvc;
@@ -8,37 +9,39 @@ namespace Lebenslauf.Web.Areas.Admin.Controllers
 {
     public class ErfahrungController : AdminBaseController
     {
-        #region constructor
         private readonly IErfahrungService _erfahrungService;
+
         public ErfahrungController(IErfahrungService erfahrungService)
         {
             _erfahrungService = erfahrungService;
         }
-        #endregion
+
         public async Task<IActionResult> Index()
         {
             return View(await _erfahrungService.GetAllErfahrungs());
         }
+
         public async Task<IActionResult> LoadErfahrungFormModal(long id)
         {
-            CreateOrEditErfahrungViewModel result = await _erfahrungService.FillCreateOrEditErfahrungViewModel(id);
+            var result = await _erfahrungService.FillCreateOrEditErfahrungViewModel(id);
             return PartialView("_CreateOrEditErfahrungModal", result);
         }
+
+        [HttpPost]
         public async Task<IActionResult> SubmitErfahrungFormModal(CreateOrEditErfahrungViewModel erfahrung)
         {
             var result = await _erfahrungService.CreateOrEditErfahrung(erfahrung);
+            if (result) return new JsonResult(new { status = "Success" }); // نقطه اضافی حذف شد
 
-            if (result) return new JsonResult(new { status ="Success." }); 
-
-            return new JsonResult(new { status = "Error." });
+            return new JsonResult(new { status = "Error" });
         }
+
         public async Task<IActionResult> DeleteErfahrung(long id)
         {
             var result = await _erfahrungService.DeleteErfahrung(id);
+            if (result) return new JsonResult(new { status = "Success" }); // نقطه اضافی حذف شد
 
-            if (result) return new JsonResult(new { status = "Success." });
-
-            return new JsonResult(new { status = "Error." });
+            return new JsonResult(new { status = "Error" });
         }
     }
 }

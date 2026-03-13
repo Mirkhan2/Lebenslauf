@@ -1,46 +1,34 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-
 namespace Lebenslauf.Domain.ViewModels.Erfahrung
 {
     public class CreateOrEditErfahrungViewModel
     {
         public long Id { get; set; }
 
-
         [Display(Name = "Thema")]
-        [Required(ErrorMessage = "Bitte geben Sie {0} ein")]
-        [MaxLength(100, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
+        [Required(ErrorMessage = "Bitte geben Sie {0} ein.")]
+        [MaxLength(100, ErrorMessage = "{0} darf nicht länger als {1} Zeichen sein.")]
         public string Title { get; set; }
 
-
-        [Display(Name = " Daten anfangen")]
-        [Required(ErrorMessage = "Bitte geben Sie {0} ein")]
-        [MinLength(4, ErrorMessage = "{0}Es kann nicht weniger als {1} Zeichen sein. ")]
-        [MaxLength(4, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
+        [Display(Name = "Datum Anfangen")]
+        [Required(ErrorMessage = "Bitte geben Sie {0} ein.")]
+        [MinLength(4, ErrorMessage = "{0} darf nicht kürzer als {1} Zeichen sein.")]
+        [MaxLength(4, ErrorMessage = "{0} darf nicht länger als {1} Zeichen sein.")]
         public string StartDate { get; set; }
 
-
-        [Display(Name = " Daten Beenden")]
+        [Display(Name = "Datum Beenden")]
         [Required(ErrorMessage = "Bitte geben Sie {0} ein.")]
-        [MinLength(4, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
-        [MaxLength(4, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
+        [MinLength(4, ErrorMessage = "{0} darf nicht kürzer als {1} Zeichen sein.")]
+        [MaxLength(4, ErrorMessage = "{0} darf nicht länger als {1} Zeichen sein.")]
         public string EndDate { get; set; }
 
-        [Display(Name = " Percent ")]
+        [Display(Name = "Erklärung")]
         [Required(ErrorMessage = "Bitte geben Sie {0} ein.")]
-        [MinLength(4, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
-        [MaxLength(4, ErrorMessage = "{0} Es kann nicht weniger als {1} Zeichen sein.")]
-        public string Percent { get; set; }
-
-
-        [Display(Name = "erklarung")]
-        [Required(ErrorMessage = "Bitte geben Sie {0} ein.")]
-        [MaxLength(1000, ErrorMessage = "{0}Es kann nicht weniger als {1} Zeichen sein.")]
+        [MaxLength(1000, ErrorMessage = "{0} darf nicht länger als {1} Zeichen sein.")]
         public string Description { get; set; }
 
-
-        [Display(Name = "Prioritat")]
+        [Display(Name = "Priorität")]
         public int Order { get; set; } = 0;
     }
 }

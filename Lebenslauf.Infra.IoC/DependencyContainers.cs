@@ -14,15 +14,15 @@ namespace Lebenslauf.Infra.IoC
         public static  void RegisterService(IServiceCollection service)
         {
             service.AddScoped<IThingIDoService, ThingsIDoService>();
-            service.AddScoped<ICustomerFeedbackService, CustomerFeedbackService>();
             service.AddScoped<IEducationService, EducationService>();
             service.AddScoped<ICustomerLogoService, CustomerLogoService>();
             service.AddScoped<IErfahrungService, ErfahrungService>();
-            service.AddScoped<IPortfolioService, PortfolioService>();
-            service.AddScoped<IFahigkeitService, FahigkeitService>();
             service.AddScoped<ISocialMediaService, SocialMediaService>();
             service.AddScoped<IInformationService, InformationService>();
-            service.AddScoped<IMessageService , MessageService>();
+            service.AddScoped<IMessageService, MessageService>();
+            service.AddScoped<IFahigkeitService, FahigkeitService>();
+            service.AddScoped<IPortfolioService, PortfolioService>();
+            service.AddScoped<ICustomerFeedbackService, CustomerFeedbackService>();
         }
 
     }

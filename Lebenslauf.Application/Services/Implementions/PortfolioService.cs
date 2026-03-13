@@ -28,7 +28,6 @@ namespace Lebenslauf.Application.Services.Implementions
         public async Task<List<PortfolioViewModel>> GetAllPortfolios()
         {
             List<PortfolioViewModel> portfolios = await _context.Portfolios
-                // Add this line to load the related data
                 .Include(p => p.PortfolioCategory)
                 .OrderBy(p => p.Order)
                 .Select(p => new PortfolioViewModel()
@@ -167,7 +166,7 @@ namespace Lebenslauf.Application.Services.Implementions
             {
                 var newPorfolioCategory = new PortfolioCategory()
                 {
-                    //Name = portfolioCategory.Name,
+                    Name = portfolioCategory.Name,
                     Order = portfolioCategory.Order,
                     Title = portfolioCategory.Title
                 };
@@ -179,7 +178,7 @@ namespace Lebenslauf.Application.Services.Implementions
             PortfolioCategory currentportfolioCategory = await GetAllPortfolioCategoryById(portfolioCategory.Id);
             if (currentportfolioCategory == null) return false;
 
-            //currentportfolioCategory.Name = portfolioCategory.Name;
+            currentportfolioCategory.Name = portfolioCategory.Name;
             currentportfolioCategory.Order = portfolioCategory.Order;
             currentportfolioCategory.Title = portfolioCategory.Title;
             await _context.SaveChangesAsync();

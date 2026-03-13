@@ -3,11 +3,12 @@ using Lebenslauf.Application.Generator;
 using Lebenslauf.Application.Services.Interfaces;
 using Lebenslauf.Application.StaticTools;
 using Lebenslauf.Domain.ViewModels.Information;
+using Lebenslauf.Web.Areas.Controllers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Lebenslauf.Web.Areas.Admin.Controllers
 {
-    public class InformationController : Controller
+    public class InformationController : AdminBaseController
     {
         #region Constructor
         private readonly IInformationService _informationService;

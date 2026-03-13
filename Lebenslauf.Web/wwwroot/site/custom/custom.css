@@ -2,3 +2,11 @@
 {
     font-size: 4rem;
 }
+.contact-form .form-control {
+    color: #333333 !important; 
+    background-color: #ffffff !important;
+}
+
+    .contact-form .form-control:focus {
+        color: #000000 !important;
+    }

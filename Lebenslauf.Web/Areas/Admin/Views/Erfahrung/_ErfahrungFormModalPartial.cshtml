@@ -1,11 +1,11 @@
-﻿@model Lebenslauf.Domain.ViewModels.Education.CreateOrEditEducationViewModel
+﻿@model Lebenslauf.Domain.ViewModels.Erfahrung.CreateOrEditErfahrungViewModel
 @{
-    Layout = null; 
+    Layout = null;
     bool isCreate = Model.Id == 0;
 }
 
-<form id="EducationForm" asp-area="Admin" asp-controller="Education" asp-action="SubmitEducationFormModal"
-      data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="EducationFormSubmited">
+<form id="ErfahrungForm" asp-area="Admin" asp-controller="Erfahrung" asp-action="SubmitErfahrungFormModal"
+      data-ajax="true" data-ajax-begin="StartLoading()" data-ajax-success="ErfahrungFormSubmited">
 
     <div class="modal-header">
         <h5 class="modal-title">@(isCreate ? "Erstellen" : "Bearbeiten")</h5>
@@ -17,7 +17,6 @@
     <div class="modal-body">
         <div class="row">
             <div class="col-12">
-
                 @if (!isCreate)
                 {
                     <input type="hidden" asp-for="Id" />
@@ -35,15 +34,14 @@
                     <div class="form-group col-md-6">
                         <label asp-for="StartDate"></label>
                         <div class="controls">
-                            <input type="text" asp-for="StartDate" class="form-control" placeholder="z.B. 2015">
+                            <input type="text" asp-for="StartDate" class="form-control" placeholder="z.B. 2018">
                         </div>
                         <span asp-validation-for="StartDate" class="text-danger"></span>
                     </div>
-
                     <div class="form-group col-md-6">
                         <label asp-for="EndDate"></label>
                         <div class="controls">
-                            <input type="text" asp-for="EndDate" class="form-control" placeholder="z.B. 2019">
+                            <input type="text" asp-for="EndDate" class="form-control" placeholder="z.B. 2022">
                         </div>
                         <span asp-validation-for="EndDate" class="text-danger"></span>
                     </div>
@@ -52,7 +50,7 @@
                 <div class="form-group">
                     <label asp-for="Description"></label>
                     <div class="controls">
-                        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                        <textarea asp-for="Description" class="form-control" rows="4"></textarea>
                     </div>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
@@ -70,7 +68,6 @@
                         @(isCreate ? "Erstellen" : "Speichern")
                     </button>
                 </div>
-
             </div>
         </div>
     </div>
